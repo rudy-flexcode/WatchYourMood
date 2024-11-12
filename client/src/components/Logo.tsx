@@ -5,7 +5,7 @@ function Logo() {
     <>
       <img
         id="logo"
-        src="../../public/images/Logo-WatchYourMood.png"
+        src="./images/Logo-WatchYourMood.png"
         alt="Logo WatchyourMood"
       />
     </>
