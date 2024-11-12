@@ -4,10 +4,10 @@ import Nav from "./components/Navbar";
 
 function App() {
   return (
-  <>
+    <>
       <header>
-        <Logo/>
-        <Nav/>
+        <Logo />
+        <Nav />
       </header>
     </>
   );
