@@ -40,4 +40,3 @@ createRoot(rootElement).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
-

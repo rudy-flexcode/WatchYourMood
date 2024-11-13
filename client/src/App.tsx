@@ -3,8 +3,7 @@ import Avatar from "./components/Avatar";
 import Logo from "./components/Logo";
 import Nav from "./components/Navbar";
 
-
-function App (){
+function App() {
   return (
     <>
       <header>
@@ -26,12 +25,7 @@ function App (){
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default App;
-
-
-
-
-     
