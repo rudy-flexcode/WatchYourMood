@@ -1,8 +1,8 @@
 import type React from "react";
-import colereImage from "../../src/assets/images/colere.png";
-import joieImage from "../../src/assets/images/joie.png";
-import peurImage from "../../src/assets/images/peur.png";
-import tristesseImage from "../../src/assets/images/tristesse.png";
+import colereImage from "../assets/images/colere.png";
+import joieImage from "../assets/images/joie.png";
+import peurImage from "../assets/images/peur.png";
+import tristesseImage from "../assets/images/tristesse.png";
 
 const Avatar: React.FC = () => {
   return (

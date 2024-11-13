@@ -1,9 +1,9 @@
 import "./App.css";
 import Avatar from "./components/Avatar";
 
-import type React from "react";
 
-const App: React.FC = () => {
+
+function App (){
   return (
     <>
       <div>
