@@ -55,3 +55,23 @@ header li {
     margin-right: 1rem;
   }
 }
+
+/*Styles pour la barre de filtres */
+.searchBar {
+  padding: 30px 2rem;
+}
+
+.searchBar input {
+  font-size: 1rem;
+  padding: 1rem 10rem;
+}
+
+.search_results {
+  width: 2%;
+}
+
+.search_result {
+  border: 1px solid;
+  margin: 1px 1px;
+  padding: 1px;
+}
