@@ -214,10 +214,10 @@ header li {
     /*RESPONSIVE DESKTOP EMOTICONES*/
     .button-container{
         width:100%;
-        padding-left:28rem;
+        padding-left:37rem;
     }
     .button-container button{
-        width:10%;
+        width:5%;
     }
   }
 
