@@ -1,14 +1,12 @@
 import "./App.css";
 import Avatar from "./components/Avatar";
 import Logo from "./components/Logo";
-import Nav from "./components/Navbar";
 
 function App() {
   return (
     <>
       <header>
         <Logo />
-        <Nav />
       </header>
       <div>
         <h1 className="titre">Quel est ton mood aujourd'hui ?</h1>
