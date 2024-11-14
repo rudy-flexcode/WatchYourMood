@@ -1,3 +1,4 @@
+
 @media (max-width: 480px) {
   .flexbox {
     padding: 15px;
@@ -71,9 +72,239 @@ body {
   cursor: pointer;
   border-radius: 15px;
   transition: background-color 0.3s ease;
-  padding: 10px 20px; /* Ajouter du padding autour du texte du bouton */
+  padding: 10px 20px; 
 }
 
 .click-event button:hover {
   background-color: #798322f5;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 681px) {
+  .titre {
+    text-align: center;
+    color: white;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+  }
+
+  .blockAcceuil {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 4%;
+
+    max-width: 100%;
+  }
+
+  .block1 {
+    max-width: 54%;
+    margin-left: -10%;
+    margin-right: 5%;
+  }
+  .block2 {
+    max-width: 56%;
+    margin-left: -45%;
+  }
+  .block3 {
+    max-width: 52%;
+    margin-left: -40%;
+  }
+  .block4 {
+    max-width: 42%;
+    margin-left: -33%;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -4%;
+  }
+  .Suivant {
+    color: white;
+    background-color: #5f94c5;
+    border: none;
+    width: 12em;
+    height: 5em;
+    border-radius: 14%;
+    font-size: 15px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .VoirFilm {
+    color: white;
+    background-color: #eb2027;
+    border: none;
+    width: 12em;
+    height: 5em;
+    border-radius: 14%;
+    font-size: 15px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    background-color: black;
+  }
+
+  .titre {
+    text-align: center;
+    color: white;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .blockAcceuil {
+    margin-top: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-width: 100%;
+  }
+
+  .block1 {
+    max-width: 170%;
+    margin-left: -50%;
+    margin-top: -3%;
+  }
+  .block2 {
+    max-width: 180%;
+    margin-left: -50%;
+    margin-top: -60%;
+  }
+  .block3 {
+    max-width: 170%;
+    margin-right: -49%;
+    margin-top: -178%;
+  }
+  .block4 {
+    max-width: 141%;
+    margin-right: -50%;
+    margin-top: -100%;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -22%;
+  }
+  .Suivant {
+    color: white;
+    background-color: #5f94c5;
+    border: none;
+    width: 10em;
+    height: 5em;
+    border-radius: 14%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .VoirFilm {
+    color: white;
+    background-color: #eb2027;
+    border: none;
+    width: 10em;
+    height: 5em;
+    border-radius: 14%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Irish Grover";
+    src: url(../public/fonts/IrishGrover-Regular.ttf);
+  }
+
+  :root {
+    --main-font: "Irish Grover";
+    --bg-color: #000000;
+    --text-color: white;
+  }
+
+  body {
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.8em;
+  }
+
+  header {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+  }
+
+  #logo {
+    width: 104px;
+    height: 44px;
+  }
+
+  header ul {
+    padding: 0;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+  header li {
+    list-style: none;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    body {
+      font-size: 2rem;
+    }
+
+    #logo {
+      width: 313px;
+      height: 134px;
+    }
+
+    header ul {
+      gap: 7rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+
+.searchBar {
+  padding: 30px 2rem;
+}
+
+.searchBar input {
+  font-size: 1rem;
+  padding: 1rem 10rem;
+}
+
+.search_results {
+  width: 2%;
+}
+
+.search_result {
+  border: 1px solid;
+  margin: 1px 1px;
+  padding: 1px;
+
 }
