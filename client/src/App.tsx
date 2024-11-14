@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import "./App.css";
 import Avatar from "./components/Avatar";
 import Logo from "./components/Logo";
@@ -22,6 +23,7 @@ function App() {
           <button className="VoirFilm" type="button">
             Voir tous les films
           </button>
+          <Footer />
         </div>
       </div>
     </>
