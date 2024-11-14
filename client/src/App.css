@@ -7,9 +7,14 @@
   font-family: "Irish Grover";
   src: url(../public/fonts/IrishGrover-Regular.ttf);
 }
+@font-face {
+  font-family: "Inter";
+  src: url(../public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
 
 :root {
   --main-font: "Irish Grover";
+  --second-font:"Inter";
   --bg-color: #000000;
   --text-color: white;
 }
@@ -100,22 +105,26 @@ header li {
     color: white;
     background-color: #5f94c5;
     border: none;
-    width: 10em;
-    height: 5em;
-    border-radius: 14%;
-    font-family: "Poppins", serif;
-    font-weight: 400;
+    width: 40%;
+    height: 3rem;
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: var(--second-font);
+    font-weight: 700;
+    font-size: 1rem;
     font-style: normal;
   }
   .VoirFilm {
     color: white;
     background-color: #eb2027;
     border: none;
-    width: 10em;
-    height: 5em;
-    border-radius: 14%;
-    font-family: "Poppins", serif;
-    font-weight: 400;
+    width: 40%;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    font-family: var(--second-font);
+    font-weight: 700;
     font-style: normal;
   }
 }
