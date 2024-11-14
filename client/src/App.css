@@ -121,24 +121,20 @@ header li {
 }
 
 /*SEARCH BAR*/
-    .searchBar {
-      padding: 30px 2rem;
-    }
-    
-    .searchBar input {
-      font-size: 1rem;
-      padding: 1rem 10rem;
-    }
-    
-    .search_results {
-      width: 2%;
-    }
-    
-    .search_result {
-      border: 1px solid;
-      margin: 1px 1px;
-      padding: 1px;
-    }
+.searchBar{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+}
+
+ .searchBar input {
+  width: 70%;
+  background-color: rgb(242, 240, 240);
+  border-style: none;
+  padding: 0.3em;
+  opacity: 80%;
+}
 
 /*RESPONSIVE DESKTOP HEADER*/
   @media screen and (min-width: 1024px) {
@@ -156,7 +152,15 @@ header li {
       margin-right: 1rem;
     }
   }
-  
+
+/*RESPONSIVE DESKTOP SEARCH BAR*/
+@media screen and (min-width: 1024px){
+    .searchBar input{
+      width: 30%;
+      padding: 1em;
+      margin:1.5em;
+    }
+}
 
 /*RESPONSIVE DESKTOP,TABLETTE ACCUEIL*/
 @media (min-width: 681px) {
