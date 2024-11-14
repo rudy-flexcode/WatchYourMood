@@ -1,4 +1,3 @@
-
 @media (max-width: 480px) {
   .flexbox {
     padding: 15px;
@@ -72,12 +71,12 @@ body {
   cursor: pointer;
   border-radius: 15px;
   transition: background-color 0.3s ease;
-  padding: 10px 20px; 
+  padding: 10px 20px;
 }
 
 .click-event button:hover {
   background-color: #798322f5;
-
+}
 * {
   margin: 0;
   padding: 0;
@@ -288,7 +287,6 @@ body {
   }
 }
 
-
 .searchBar {
   padding: 30px 2rem;
 }
@@ -306,5 +304,4 @@ body {
   border: 1px solid;
   margin: 1px 1px;
   padding: 1px;
-
 }

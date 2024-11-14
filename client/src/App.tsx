@@ -5,9 +5,6 @@ import Logo from "./components/Logo";
 import Nav from "./components/Navbar";
 
 function App() {
-
-  return <Footer />;
-
   return (
     <>
       <header>
@@ -26,11 +23,11 @@ function App() {
           <button className="VoirFilm" type="button">
             Voir tous les films
           </button>
+          <Footer />
         </div>
       </div>
     </>
   );
-
 }
 
 export default App;

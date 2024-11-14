@@ -41,7 +41,6 @@ createRoot(rootElement).render(
   </StrictMode>,
 );
 
-
 /**
  * Helpful Notes:
  *
@@ -66,4 +65,3 @@ createRoot(rootElement).render(
  *    You can create routes that take parameters (e.g., /users/:id).
  *    Documentation: https://reactrouter.com/en/main/start/tutorial#url-params-in-loaders
  */
-
