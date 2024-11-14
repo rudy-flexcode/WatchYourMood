@@ -43,13 +43,13 @@ function Search() {
                     ★
                   </button>
                   <button className="add-button" type="button">
-                    +
+                    ✔︎
                   </button>
                   <button className="like-button" type="button">
-                    👍
+                  👍🏼
                   </button>
                   <button className="dislike-button" type="button">
-                    👎
+                    👎🏼
                   </button>
                 </div>
 
@@ -57,7 +57,6 @@ function Search() {
                   src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                   alt={data.title}
                 />
-                {data.title}
               </div>
             );
           },

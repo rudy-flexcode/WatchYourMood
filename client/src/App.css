@@ -21,7 +21,7 @@ body {
   font-size: 0.8em;
 }
 
-/*MOBILE FIRST - HEADER*/
+/*HEADER*/
 header {
   display: flex;
   padding: 1em;
@@ -46,7 +46,7 @@ header li {
   padding-top: 1em;
 }
 
-/*MOBILE ACCUEIL*/
+/*MOBILE FIRST - ACCUEIL*/
 @media (max-width: 680px) {
   .titre {
     text-align: center;
@@ -136,8 +136,42 @@ header li {
   opacity: 80%;
 }
 
-/*RESPONSIVE DESKTOP HEADER*/
+/*MOVIES*/
+.search_result{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search_results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    margin-bottom: 1.5rem;
+}
+
+.search_results img{
+    width: 80%;
+}
+/*EMOTICONES*/
+.button-container{
+    padding-left: 3.5rem;
+}
+
+.button-container button{
+    color:var(--text-color);
+    background-color:var(--bg-color);
+    border-style: none;
+    width: 25%;
+    padding-left: 0.3rem;
+}
+
+.like-button , .dislike-button {
+    filter:brightness(3)
+}
+/*TOUT CE QUI EST AU DESSUS DE CETTE LIGNE CONCERNE LE MOBILE, ET EN DESSOUS DE CETTE LIGNE LES RESPONSIVES DESKTOP*/
   @media screen and (min-width: 1024px) {
+    /*RESPONSIVE DESKTOP HEADER*/
     body {
       font-size: 2rem;
     }
@@ -151,16 +185,32 @@ header li {
       gap: 7rem;
       margin-right: 1rem;
     }
-  }
 
-/*RESPONSIVE DESKTOP SEARCH BAR*/
-@media screen and (min-width: 1024px){
-    .searchBar input{
+    /*RESPONSIVE DESKTOP SEARCH BAR*/
+    .searchBar input {
       width: 30%;
       padding: 1em;
-      margin:1.5em;
+      margin: 1.5em;
     }
-}
+
+    /*RESPONSIVE DESKTOP MOVIES*/
+    .search_results {
+      width: 25%;
+    }
+
+    .search_results img {
+      height: 80%;
+    }
+
+    /*RESPONSIVE DESKTOP EMOTICONES*/
+    .button-container{
+        width:100%;
+        padding-left:28rem;
+    }
+    .button-container button{
+        width:10%;
+    }
+  }
 
 /*RESPONSIVE DESKTOP,TABLETTE ACCUEIL*/
 @media (min-width: 681px) {
