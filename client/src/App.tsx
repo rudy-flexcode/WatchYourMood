@@ -1,3 +1,8 @@
+
+import Footer from "./components/Footer";
+import "./App.css";
+import { Link } from "react-router-dom";
+
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
@@ -17,9 +22,12 @@ function App() {
           <button className="Suivant" type="button">
             Suivant
           </button>
-          <button className="VoirFilm" type="button">
-            Voir tous les films
-          </button>
+          <Link to="/Base" className="VoirFilm">
+            <button className="btn1" type="button">
+              Voir tous les films
+            </button>
+          </Link>
+          <Footer />
         </div>
       </div>
       <Footer />
