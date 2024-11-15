@@ -12,7 +12,6 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
-
 // Import additional components for new routes
 
 // Try creating these components in the "pages" folder
