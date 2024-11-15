@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
   },
   {
-    path: "/Contact",
+    path: "/contact",
     element: <ContactPage />,
   },
   { path: "/Base", element: <Base /> },
