@@ -1,5 +1,3 @@
-
-import Footer from "./components/Footer";
 import "./App.css";
 import { Link } from "react-router-dom";
 
@@ -27,7 +25,6 @@ function App() {
               Voir tous les films
             </button>
           </Link>
-          <Footer />
         </div>
       </div>
       <Footer />
