@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <ContactPage />,
   },
-  { path: "/Base", element: <Base /> },
+  { path: "/base", element: <Base /> },
   // Try adding a new route! For example, "/about" with an About component
 ]);
 
