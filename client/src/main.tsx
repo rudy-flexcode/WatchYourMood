@@ -7,9 +7,14 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+
 import ContactPage from "./pages/Contact";
 
+import Base from "./pages/Base-globale";
+
+
 // Import additional components for new routes
+
 // Try creating these components in the "pages" folder
 
 // import About from "./pages/About";
@@ -28,6 +33,8 @@ const router = createBrowserRouter([
     path: "/Contact",
     element: <ContactPage />,
   },
+  { path: "/Base", element: <Base /> },
+  // Try adding a new route! For example, "/about" with an About component
 ]);
 
 /* ************************************************************************* */
