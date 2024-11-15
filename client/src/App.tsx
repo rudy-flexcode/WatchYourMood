@@ -1,7 +1,8 @@
-import Footer from "./components/Footer";
 import "./App.css";
 import { Link } from "react-router-dom";
+
 import Avatar from "./components/Avatar";
+import Footer from "./components/Footer";
 import Logo from "./components/Logo";
 
 function App() {
@@ -24,9 +25,9 @@ function App() {
               Voir tous les films
             </button>
           </Link>
-          <Footer />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
