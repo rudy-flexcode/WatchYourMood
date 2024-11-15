@@ -118,9 +118,9 @@ header li {
     color: white;
     background-color: #eb2027;
     border: none;
-    width: 40%;
-    height: 3rem;
-    padding: 1rem;
+    width: 30%;
+    height: 4rem;
+    padding: 1.2rem;
     font-size: 1rem;
     border-radius: 12px;
     font-family: var(--second-font);
@@ -346,7 +346,7 @@ body {
   padding: 10px;
   font-size: 0.7rem;
   min-height: 70px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -373,4 +373,16 @@ body {
 
 .click-event button:hover {
   background-color: #798322f5;
+}
+
+.btn1 {
+  color: white;
+  border: none;
+  background: none;
+  text-align: center;
+  font-family: var(--second-font);
+  font-weight: 700;
+  font-size: 1rem;
+  font-style: normal;
+  margin: 18%;
 }
