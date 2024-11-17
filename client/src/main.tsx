@@ -12,6 +12,8 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
+import FavoritesPage from "./pages/FavoritesPage";
+
 // Import additional components for new routes
 
 // Try creating these components in the "pages" folder
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
   },
   { path: "/base", element: <Base /> },
   // Try adding a new route! For example, "/about" with an About component
+
+  {
+    path: "/favorites",
+    element: <FavoritesPage />,
+  },
 ]);
 
 /* ************************************************************************* */
