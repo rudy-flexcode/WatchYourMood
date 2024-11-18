@@ -17,31 +17,35 @@
     margin-top: -22%;
   }
 
-  .text-suivant {
-    color: white;
+ .button-suivant{
     background-color: #5f94c5;
-    border: none;
-    width: 40%;
+    width: 50%;
     height: 3rem;
     border-radius: 12px;
-    padding: 1rem;
+    text-align: center;
+    align-content: center;
+  }
+
+  .text-suivant, .text-all{
+    color: white;
+    background: none;
+    border:none;
+    text-align: center;
+    font-size: 1em;
     font-family: var(--second-font);
     font-weight: 700;
-    font-size: 1rem;
     font-style: normal;
   }
-  .text-all {
-    color: white;
+
+  .button-all{
     background-color: #eb2027;
-    border: none;
-    width: 30%;
-    height: 4rem;
-    padding: 1.2rem;
-    font-size: 1rem;
+    width: 50%;
+    height: 3rem;
     border-radius: 12px;
-    font-family: var(--second-font);
-    font-weight: 700;
-    font-style: normal;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 5rem;
+  }
   }
 }
 
