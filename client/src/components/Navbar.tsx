@@ -1,11 +1,14 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 
-function Nav() {
+interface NavType {
+  isInMyMood?: boolean;
+}
+function Nav({isInMyMood} : NavType) {
   return (
     <ul>
-      <Link to="/mood" className="mon-mood">
-      <li>Mon Mood</li>
+      <Link to="/mood">
+        <li className={isInMyMood ? "mon-mood" : ""}>Mon Mood</li>
       </Link>
       <li>Watchlist</li>
     </ul>
