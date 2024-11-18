@@ -1,0 +1,68 @@
+.flexbox,
+.footer {
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(255, 223, 56);
+  border: 2px solid;
+  text-shadow: 3px 3px 8px black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.7rem;
+  min-height: 70px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flexbox .text-content {
+  flex: 1;
+}
+
+.click-event button {
+  background-color: rgba(255, 222, 56);
+  color: rgb(27, 26, 26);
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+}
+
+.click-event button:hover {
+  background-color: #798322f5;
+}
+
+/* Footer */
+@media (max-width: 480px) {
+  .flexbox {
+    padding: 15px;
+  }
+
+  .click-event button {
+    font-size: 1.2rem;
+  }
+
+  .flexbox p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .flexbox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .click-event button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .flexbox .text-content {
+    text-align: center;
+  }

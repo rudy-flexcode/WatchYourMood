@@ -3,6 +3,7 @@ import colereImage from "../assets/images/colere.png";
 import joieImage from "../assets/images/joie.png";
 import peurImage from "../assets/images/peur.png";
 import tristesseImage from "../assets/images/tristesse.png";
+import "./Avatar.css"
 
 const Avatar: React.FC = () => {
   return (
