@@ -23,6 +23,11 @@ header li {
   padding-top: 1em;
 }
 
+.mon-mood {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (min-width: 1024px) {
   /*RESPONSIVE DESKTOP HEADER*/
   body {

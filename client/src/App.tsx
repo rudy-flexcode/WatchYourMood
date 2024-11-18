@@ -17,9 +17,11 @@ function App() {
           <Avatar />
         </div>
         <div className="button">
-          <button className="Suivant" type="button">
-            Suivant
-          </button>
+          <Link to="/mood" className="button-suivant">
+            <button className="Suivant" type="button">
+              Suivant
+            </button>
+          </Link>
           <Link to="/Base" className="VoirFilm">
             <button className="btn1" type="button">
               Voir tous les films
