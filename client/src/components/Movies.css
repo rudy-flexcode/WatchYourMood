@@ -1,5 +1,5 @@
 /*MOBILE FIRST*/
-/*MOVIES*/ 
+/*MOVIES*/
 .search_result {
   display: flex;
   flex-wrap: wrap;
@@ -17,11 +17,11 @@
   width: 80%;
 }
 /*EMOTICONES*/
-.button-container{
-    width:80%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.button-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .button-container button {
@@ -36,14 +36,15 @@
   filter: brightness(3);
 }
 /*RESPONSIVE TABLETTES*/
-@media screen and (min-width: 681px) and (max-width: 1023px){
+@media screen and (min-width: 681px) and (max-width: 1023px) {
   /*MOVIES*/
   .search_results {
     width: 32%;
   }
 
   .button-container button {
-    font-size: 1rem;  }
+    font-size: 1rem;
+  }
 }
 
 /*RESPONSIVE DESKTOP*/
@@ -52,14 +53,12 @@
   .search_results {
     width: 25%;
   }
-  .button-container{
+  .button-container {
     height: 3rem;
   }
 
-  .button-container button{
+  .button-container button {
     width: 11%;
     font-size: 1.5rem;
   }
-
 }
-

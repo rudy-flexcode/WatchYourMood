@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Search.css";
-import "./Movies.css"
+import "./Movies.css";
 
 function Search() {
   const [datas, setDatas] = useState([]);

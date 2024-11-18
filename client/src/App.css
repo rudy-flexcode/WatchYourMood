@@ -1,5 +1,3 @@
-
-
 /*MOBILE FIRST - ACCUEIL*/
 @media (max-width: 680px) {
   .titre {
@@ -56,7 +54,7 @@
     font-style: normal;
     font-size: 2em;
   }
-  
+
   .button {
     display: flex;
     justify-content: center;
