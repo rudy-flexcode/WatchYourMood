@@ -1,4 +1,6 @@
-/*MOVIES*/ .search_result {
+/*MOBILE FIRST*/
+/*MOVIES*/ 
+.search_result {
   display: flex;
   flex-wrap: wrap;
 }
@@ -15,40 +17,49 @@
   width: 80%;
 }
 /*EMOTICONES*/
-  .button-container {
-  padding-left: 3.5rem;
+.button-container{
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .button-container button {
   color: var(--text-color);
   background-color: var(--bg-color);
   border-style: none;
-  width: 25%;
-  padding-left: 0.3rem;
+  width: 14%;
 }
 
 .like-button,
 .dislike-button {
   filter: brightness(3);
 }
+/*RESPONSIVE TABLETTES*/
+@media screen and (min-width: 681px) and (max-width: 1023px){
+  /*MOVIES*/
+  .search_results {
+    width: 32%;
+  }
 
+  .button-container button {
+    font-size: 1rem;  }
+}
+
+/*RESPONSIVE DESKTOP*/
 @media screen and (min-width: 1024px) {
-  /*RESPONSIVE DESKTOP MOVIES*/
+  /*MOVIES*/
   .search_results {
     width: 25%;
   }
-
-  .search_results img {
-    height: 80%;
+  .button-container{
+    height: 3rem;
   }
 
-  /*RESPONSIVE DESKTOP EMOTICONES*/
-  .button-container {
-    width: 100%;
-    padding-left: 37rem;
+  .button-container button{
+    width: 11%;
+    font-size: 1.5rem;
   }
-  .button-container button {
-    width: 5%;
-  }
+
 }
 
