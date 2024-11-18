@@ -16,14 +16,14 @@ function App() {
         <div>
           <Avatar />
         </div>
-        <div className="button">
+        <div className="buttons">
           <Link to="/mood" className="button-suivant">
-            <button className="Suivant" type="button">
+            <button className="text-suivant" type="button">
               Suivant
             </button>
           </Link>
-          <Link to="/Base" className="VoirFilm">
-            <button className="btn1" type="button">
+          <Link to="/Base" className="button-all">
+            <button className="text-all" type="button">
               Voir tous les films
             </button>
           </Link>
