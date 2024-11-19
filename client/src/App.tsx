@@ -4,13 +4,11 @@ import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
 
-
 function App() {
   return (
     <>
       <header>
         <Logo />
-        
       </header>
 
       <div>
