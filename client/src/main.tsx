@@ -2,6 +2,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./Main.css";
 
 /* ************************************************************************* */
 
@@ -12,7 +13,8 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
-import FavoritesPage from "./components/FavoritesPage";
+import Watchlist from "./pages/Watchlist";
+
 
 // Import additional components for new routes
 
@@ -35,12 +37,14 @@ const router = createBrowserRouter([
     element: <ContactPage />,
   },
   { path: "/base", element: <Base /> },
-  // Try adding a new route! For example, "/about" with an About component
 
   {
-    path: "/favorites",
-    element: <FavoritesPage />,
+    path: "/watchlist",
+    element: <Watchlist />,
   },
+  // Try adding a new route! For example, "/about" with an About component
+
+
 ]);
 
 /* ************************************************************************* */

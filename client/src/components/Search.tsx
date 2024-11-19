@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
+import "./Search.css";
+import "./Movies.css";
 
 type Movie = {
   id: number;
@@ -17,7 +18,7 @@ function Search() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=768962ec35ca457ffbe6714ba8be24e8",
+      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
     )
       .then((response) => response.json())
       .then((json) => setDatas(json.results));
