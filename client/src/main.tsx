@@ -12,6 +12,8 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
+import Watchlist from "./pages/Watchlist";
+
 // Import additional components for new routes
 
 // Try creating these components in the "pages" folder
@@ -33,6 +35,11 @@ const router = createBrowserRouter([
     element: <ContactPage />,
   },
   { path: "/base", element: <Base /> },
+
+  {
+    path: "/Watchlist",
+    element: <Watchlist/>
+  }
   // Try adding a new route! For example, "/about" with an About component
 ]);
 

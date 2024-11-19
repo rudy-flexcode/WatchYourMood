@@ -1,16 +1,18 @@
 import "./App.css";
 import { Link } from "react-router-dom";
-
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
+import Watchlist from "./pages/Watchlist";
 
 function App() {
   return (
     <>
       <header>
         <Logo />
+        <Watchlist />
       </header>
+
       <div>
         <h1 className="titre">Quel est ton mood aujourd'hui ?</h1>
         <div>
