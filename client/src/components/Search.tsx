@@ -7,8 +7,8 @@ function Search() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9"
-        )
+      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
+    )
       .then((response) => response.json())
       .then((json) => setDatas(json.results));
   }, []);

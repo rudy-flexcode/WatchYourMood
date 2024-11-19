@@ -38,8 +38,8 @@ const router = createBrowserRouter([
 
   {
     path: "/Watchlist",
-    element: <Watchlist/>
-  }
+    element: <Watchlist />,
+  },
   // Try adding a new route! For example, "/about" with an About component
 ]);
 
