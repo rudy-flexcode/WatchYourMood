@@ -9,11 +9,11 @@ type Movie = {
 };
 
 function Search() {
-  const [datas, setDatas] = useState<Movie[]>([]); // Liste des films récupérés
-  const [searchTerm, setSearchTerm] = useState(""); // Terme de recherche
-  const [favorites, setFavorites] = useState<Movie[]>([]); // Films favoris
+  const [datas, setDatas] = useState<Movie[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [favorites, setFavorites] = useState<Movie[]>([]);
 
-  const navigate = useNavigate(); // Pour rediriger vers la page des favoris
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
@@ -43,7 +43,7 @@ function Search() {
     }
   };
 
-  // Filtre les films selon le terme de recherche
+  // Filtre les films
   const filteredDatas = datas.filter((data) =>
     data.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );

@@ -12,7 +12,7 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
-import FavoritesPage from "./pages/FavoritesPage";
+import FavoritesPage from "./components/FavoritesPage";
 
 // Import additional components for new routes
 
