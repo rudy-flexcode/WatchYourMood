@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
-import Watchlist from "./pages/Watchlist";
+
 
 function App() {
   return (
     <>
       <header>
         <Logo />
-        <Watchlist />
+        
       </header>
 
       <div>
