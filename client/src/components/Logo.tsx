@@ -7,7 +7,7 @@ function Logo() {
       <Link to="/">
       <img
         id="logo"
-        src="./images/Logo-WatchYourMood.png"
+        src="../images/Logo-WatchYourMood.png"
         alt="Logo WatchyourMood"
       />
       </Link>

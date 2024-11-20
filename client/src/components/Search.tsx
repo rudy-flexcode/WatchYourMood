@@ -3,22 +3,33 @@ import "./Search.css";
 import "./Movies.css";
 
 function Search() {
-  const [datas, setDatas] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [genres, setGenres] = useState([]); // Stocke la liste des genres
 
   useEffect(() => {
+    // Récupérer les films
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=768962ec35ca457ffbe6714ba8be24e8",
+      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&language=fr-FR",
     )
       .then((response) => response.json())
-      .then((json) => setDatas(json.results));
+      .then((json) => setMovies(json.results));
+
+     // Récupérer les genres
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=01e787d764d61219a648b30bc425cdc9&language=fr-FR",
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setGenres(data.genres);
+      });
   }, []);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredDatas = datas.filter((data: { title: string }) =>
+  const filteredDatas = movies.filter((data: { title: string }) =>
     data.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 

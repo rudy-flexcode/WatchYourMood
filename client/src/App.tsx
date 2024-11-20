@@ -17,7 +17,7 @@ function App() {
           <Avatar />
         </div>
         <div className="buttons">
-          <Link to="/mood" className="button-suivant">
+          <Link to="/mood/:emotionID" className="button-suivant">
             <button className="text-suivant" type="button">
               Suivant
             </button>

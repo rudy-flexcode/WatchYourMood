@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     path: "/base", 
     element: <Base /> },
   {
-    path: "/mood",
+    path: "/mood/:emotionID",
     element: <MyMood/>,
   }
   // Try adding a new route! For example, "/about" with an About component
