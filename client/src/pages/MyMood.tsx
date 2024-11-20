@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
-import EmotionsMovies from "../components/EmotionsMovies"
+import EmotionsMovies from "../components/EmotionsMovies";
 
 
 
