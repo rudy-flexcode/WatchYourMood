@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Irish Grover";
+  src: url(../public/fonts/IrishGrover-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+:root {
+  --main-font: "Irish Grover";
+  --second-font: "Inter";
+  --bg-color: #000000;
+  --text-color: white;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.8em;
+}

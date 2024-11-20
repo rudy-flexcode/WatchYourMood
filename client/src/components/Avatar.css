@@ -1,0 +1,65 @@
+/*MOBILE FIRST - ACCUEIL*/
+@media (max-width: 680px) {
+  .blockAcceuil {
+    margin-top: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-width: 100%;
+  }
+
+  .block1 {
+    max-width: 170%;
+    margin-left: -50%;
+    margin-top: -3%;
+  }
+  .block2 {
+    max-width: 180%;
+    margin-left: -50%;
+    margin-top: -60%;
+  }
+  .block3 {
+    max-width: 170%;
+    margin-right: -49%;
+    margin-top: -178%;
+  }
+  .block4 {
+    max-width: 141%;
+    margin-right: -50%;
+    margin-top: -100%;
+  }
+}
+
+/*RESPONSIVE DESKTOP,TABLETTE ACCUEIL*/
+@media (min-width: 681px) {
+  .blockAcceuil {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 4%;
+
+    max-width: 100%;
+  }
+
+  .block1 {
+    max-width: 54%;
+    margin-left: -10%;
+    margin-right: 5%;
+  }
+  .block2 {
+    max-width: 56%;
+    margin-left: -45%;
+  }
+  .block3 {
+    max-width: 52%;
+    margin-left: -40%;
+  }
+  .block4 {
+    max-width: 42%;
+    margin-left: -33%;
+  }
+}
