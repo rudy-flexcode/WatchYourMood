@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function EmotionsMovies ({emotion} : {emotion : string}) {
+function EmotionsMovies({emotion}: {emotion : string}) {
   const [movies, setMovies] = useState([]); //Stocke liste des films
   const [genres, setGenres] = useState([]); // Stocke la liste des genres
 
@@ -22,6 +22,6 @@ function EmotionsMovies ({emotion} : {emotion : string}) {
         setGenres(data.genres);
       });
   }, []);
-    }
+}
 
 export default EmotionsMovies;
