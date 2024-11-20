@@ -10,8 +10,7 @@ type Movie = {
 };
 
 function Search() {
-
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
 
@@ -47,7 +46,7 @@ function Search() {
   };
 
   // Filtre les films
-  const filteredDatas = datas.filter((data) =>
+  const filteredDatas = movies.filter((data) =>
     data.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 

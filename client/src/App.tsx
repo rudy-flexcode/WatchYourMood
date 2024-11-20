@@ -1,33 +1,32 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { Link } from "react-router-dom";
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Logo from "./components/Logo";
 
-function App() {
+import "./App.css";
 
+function App() {
   const [isLoading, setIsLoading] = useState(true);
-  
-  const [suivantButton, setSuivantButton] = useState(false); //Etat du boutton, par défaut : ne se montre pas.
-  const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null); // Etat pour l'émotion sélectionnée
+
+  const [suivantButton, setSuivantButton] = useState(false); // État du bouton, par défaut : ne se montre pas.
+  const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null); // État pour l'émotion sélectionnée
 
   const handleEmotionClick = (emotion: string) => {
     setSelectedEmotion(emotion);
     setSuivantButton(true);
-  }; // fonction permettant qu'au click d'une des émotions, le boutton suivant change d'état et apparait.
+  }; // Fonction permettant qu'au clic d'une des émotions, le bouton suivant change d'état et apparaît.
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
-  
+
   return (
     <>
       {isLoading && <Loader />}
-      {!isLoading && (
-    <>
+
       <header>
         <Logo />
       </header>
@@ -52,7 +51,7 @@ function App() {
         </div>
       </div>
       <Footer />
-     </>
+    </>
   );
 }
 
