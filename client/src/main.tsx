@@ -13,7 +13,11 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
+
 import MyMood from "./pages/MyMood";
+
+import Watchlist from "./pages/Watchlist";
+
 
 // Import additional components for new routes
 
@@ -42,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/mood/:emotionID",
     element: <MyMood />,
+  },
+  {
+    path: "/watchlist",
+    element: <Watchlist />,
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);

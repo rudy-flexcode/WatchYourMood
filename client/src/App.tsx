@@ -1,11 +1,16 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 import Logo from "./components/Logo";
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  
   const [suivantButton, setSuivantButton] = useState(false); //Etat du boutton, par défaut : ne se montre pas.
   const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null); // Etat pour l'émotion sélectionnée
 
@@ -14,7 +19,15 @@ function App() {
     setSuivantButton(true);
   }; // fonction permettant qu'au click d'une des émotions, le boutton suivant change d'état et apparait.
 
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+  
   return (
+    <>
+      {isLoading && <Loader />}
+      {!isLoading && (
     <>
       <header>
         <Logo />
@@ -40,6 +53,7 @@ function App() {
         </div>
       </div>
       <Footer />
+     </>
     </>
   );
 }
