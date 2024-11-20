@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 interface NavType {
   isInMyMood?: boolean;
 }
-function Nav({isInMyMood} : NavType) {
+function Nav({ isInMyMood }: NavType) {
   return (
     <ul>
       <Link to="/mood">

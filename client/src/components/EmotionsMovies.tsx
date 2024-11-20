@@ -6,10 +6,9 @@
   ça c'est pour récupérer les genres des films (ID et NOM)
 */
 
-import React from "react";
 import { useParams } from "react-router-dom";
 
-function Mood() {
+function Mood{(content): string} {
   // Récupérer l'id de l'image via les paramètres d'URL
   const { emotionId } = useParams();
 
@@ -41,4 +40,3 @@ function Mood() {
 }
 
 export default Mood;
-

@@ -5,11 +5,11 @@ function Logo() {
   return (
     <>
       <Link to="/">
-      <img
-        id="logo"
-        src="../images/Logo-WatchYourMood.png"
-        alt="Logo WatchyourMood"
-      />
+        <img
+          id="logo"
+          src="../images/Logo-WatchYourMood.png"
+          alt="Logo WatchyourMood"
+        />
       </Link>
     </>
   );

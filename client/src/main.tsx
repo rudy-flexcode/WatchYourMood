@@ -35,13 +35,14 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <ContactPage />,
   },
-  { 
-    path: "/base", 
-    element: <Base /> },
+  {
+    path: "/base",
+    element: <Base />,
+  },
   {
     path: "/mood/:emotionID",
-    element: <MyMood/>,
-  }
+    element: <MyMood />,
+  },
   // Try adding a new route! For example, "/about" with an About component
 ]);
 
