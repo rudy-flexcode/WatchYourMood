@@ -13,7 +13,6 @@ import ContactPage from "./pages/Contact";
 
 import Base from "./pages/Base-globale";
 
-
 import MyMood from "./pages/MyMood";
 
 import Watchlist from "./pages/Watchlist";
