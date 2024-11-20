@@ -16,8 +16,7 @@ function App() {
 
   return (
     <>
-
-      {isLoading && <Loader />}
+     {isLoading && <Loader />}
       {!isLoading && (
         <>
           <header>
@@ -37,7 +36,6 @@ function App() {
           <Footer />
         </>
       )}
-
     </>
   );
 }
