@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
