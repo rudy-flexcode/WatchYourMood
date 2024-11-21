@@ -42,6 +42,32 @@ const router = createBrowserRouter([
   {
     path: "/mood/:emotionID",
     element: <MyMood />,
+    loader: async ({ params }) => {
+      let emotionID = 27;
+      switch (params.emotionID) {
+        case "joie":
+          emotionID = 35;
+          break;
+        case "tristesse":
+          emotionID = 18;
+          break;
+        case "peur":
+          emotionID = 27;
+          break;
+        case "colere":
+          emotionID = 80;
+          break;
+      }
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&with_genres=${emotionID}&language=fr-FR&sort_by=popularity.desc`,
+        );
+        const data = await response.json();
+        return data.results;
+      } catch (error) {
+        console.error("Error loading mood", error);
+      }
+    },
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);

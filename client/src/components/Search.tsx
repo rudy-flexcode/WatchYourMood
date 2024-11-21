@@ -13,7 +13,7 @@ function Search() {
     )
       .then((response) => response.json())
       .then((json) => setMovies(json.results));
-      });
+  });
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

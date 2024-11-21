@@ -1,12 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
-import EmotionsMovies from "../components/EmotionsMovies"
-
-
+import Footer from "../components/Footer";
 
 function MyMood() {
-  const { emotionID } = useParams(); //Récupére l'émotionID de l'URL
+  const movies = useLoaderData() as {
+    id:number;
+    title:string;
+    poster_path:string;
+  }[]; 
+
   return (
     <>
       <header>
@@ -14,8 +17,17 @@ function MyMood() {
         <Nav isInMyMood={true} />
       </header>
       <main>
-        <EmotionsMovies emotion={emotionID} />
+        {movies.map((movie) => (
+          <div key={movie.id}>
+            <h2>{movie.title}</h2>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+            />
+          </div>
+          ))}
       </main>
+      <Footer />
     </>
   );
 }
