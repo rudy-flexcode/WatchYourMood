@@ -1,14 +1,36 @@
 import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import colereImage from "../assets/images/colere-entier.png";
+import joieImage from "../assets/images/joie-entier.png";
+import peurImage from "../assets/images/peur-entier.png";
+import tristeImage from "../assets/images/triste-entier.png";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
+import "./MyMood.css";
 
 function MyMood() {
+  const { emotionID } = useParams<{ emotionID: string }>();
   const movies = useLoaderData() as {
+    //const pour récupérer les datas du loader créé dans main.tsx
     id: number;
     title: string;
-    poster_path: string;
+    poster_path: string; //on définit les données et le type qu'on récupère
   }[];
+
+  //Mapping entre EmotionID dans l'url et l'image qu'on veut afficher
+  const emotionImage: Record<string, string> = {
+    joie: joieImage,
+    peur: peurImage,
+    triste: tristeImage,
+    colere: colereImage,
+  };
+
+  // vérifie si on a bien un emotionID dans l'URL, si oui on affiche l'image associée sinon image par défaut.
+  const currentImage =
+    emotionID && emotionImage[emotionID]
+      ? emotionImage[emotionID]
+      : "../assets/images/default.png";
 
   return (
     <>
@@ -17,15 +39,22 @@ function MyMood() {
         <Nav isInMyMood={true} />
       </header>
       <main>
-        {movies.map((movie) => (
-          <div key={movie.id}>
-            <h2>{movie.title}</h2>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-            />
-          </div>
-        ))}
+        <div className="search_result">
+          <img
+            className="personnage-image"
+            src={currentImage}
+            alt={emotionID || "default"}
+          />
+          {movies.map((movie) => (
+            <div className="search_results" key={movie.id}>
+              <h2>{movie.title}</h2>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
+          ))}
+        </div>
       </main>
       <Footer />
     </>
