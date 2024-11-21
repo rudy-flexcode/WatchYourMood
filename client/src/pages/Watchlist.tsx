@@ -1,5 +1,5 @@
+import FavoritesPage from "../components/FavoritesPage";
 import Logo from "../components/Logo";
-import Moovie from "../components/Moovies";
 import Nav from "../components/Navbar";
 
 function Watchlist() {
@@ -11,7 +11,7 @@ function Watchlist() {
       </header>
 
       <main>
-        <Moovie />
+        <FavoritesPage />
       </main>
     </>
   );
