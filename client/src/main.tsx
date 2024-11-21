@@ -15,6 +15,8 @@ import Base from "./pages/Base-globale";
 
 import MyMood from "./pages/MyMood";
 
+import Watchlist from "./pages/Watchlist";
+
 // Import additional components for new routes
 
 // Try creating these components in the "pages" folder
