@@ -42,6 +42,10 @@ const router = createBrowserRouter([
     element: <Base />,
   },
   {
+    path: "/watchlist",
+    element: <Watchlist />,
+  },
+  {
     path: "/mood/:emotionID",
     element: <MyMood />,
     loader: async ({ params }) => {
