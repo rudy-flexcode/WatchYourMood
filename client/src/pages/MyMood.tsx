@@ -1,14 +1,14 @@
 import { useLoaderData } from "react-router-dom";
+import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
-import Footer from "../components/Footer";
 
 function MyMood() {
   const movies = useLoaderData() as {
-    id:number;
-    title:string;
-    poster_path:string;
-  }[]; 
+    id: number;
+    title: string;
+    poster_path: string;
+  }[];
 
   return (
     <>
@@ -25,7 +25,7 @@ function MyMood() {
               alt={movie.title}
             />
           </div>
-          ))}
+        ))}
       </main>
       <Footer />
     </>
