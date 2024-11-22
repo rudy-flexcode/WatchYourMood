@@ -36,6 +36,7 @@
     font-family: var(--second-font);
     font-weight: 700;
     font-style: normal;
+    margin-bottom: -40%;
   }
 
   .button-all {
@@ -58,6 +59,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 2em;
+    margin-top: -7%;
   }
 
   .buttons {
@@ -66,7 +68,7 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    margin-top: -4%;
+    margin-top: 5%;
   }
   .button-suivant {
     background-color: #5f94c5;
