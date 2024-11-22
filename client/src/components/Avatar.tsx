@@ -11,7 +11,6 @@ const Avatar = ({
       <div className="block" data-name="joie">
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
-          className="block1"
           src={joieImage}
           alt="vice versa joie"
           onClick={() => handleEmotionClick("joie")}
@@ -20,7 +19,6 @@ const Avatar = ({
       <div className="block" data-name="tristesse">
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
-          className="block2"
           src={tristesseImage}
           alt="vice versa triste"
           onClick={() => handleEmotionClick("tristesse")}
@@ -29,7 +27,6 @@ const Avatar = ({
       <div className="block" data-name="peur">
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
-          className="block3"
           src={peurImage}
           alt="vice versa peur"
           onClick={() => handleEmotionClick("peur")}
@@ -38,7 +35,6 @@ const Avatar = ({
       <div className="block" data-name="colere">
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
-          className="block4"
           src={colereImage}
           alt="vice versa colère"
           onClick={() => handleEmotionClick("colere")}
