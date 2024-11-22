@@ -3,22 +3,47 @@ import joieImage from "../assets/images/joie.png";
 import peurImage from "../assets/images/peur.png";
 import tristesseImage from "../assets/images/tristesse.png";
 import "./Avatar.css";
-
-const Avatar = () => {
+const Avatar = ({
+  handleEmotionClick,
+}: { handleEmotionClick: (emotion: string) => void }) => {
   return (
     <div className="blockAcceuil">
-      <div className="block" data-name="joie">
-        <img src={joieImage} alt="vice versa joie" />
-      </div>
-      <div className="block" data-name="tristesse">
-        <img src={tristesseImage} alt="vice versa triste" />
-      </div>
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+       <div className="block" data-name="joie">
+      <img
+        className="block1"
+        src={joieImage}
+        alt="vice versa joie"
+        onClick={() => handleEmotionClick("joie")}
+      />
+       </div>
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+       <div className="block" data-name="tristesse">
+      <img
+        className="block2"
+        src={tristesseImage}
+        alt="vice versa triste"
+        onClick={() => handleEmotionClick("tristesse")}
+      />
+      </div>  
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       <div className="block" data-name="peur">
-        <img src={peurImage} alt="vice versa peur" />
-      </div>
+      <img
+        className="block3"
+        src={peurImage}
+        alt="vice versa peur"
+        onClick={() => handleEmotionClick("peur")}
+      />
+      </div>  
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       <div className="block" data-name="colere">
-        <img src={colereImage} alt="vice versa colere" />
-      </div>
+      <img
+        className="block4"
+        src={colereImage}
+        alt="vice versa colère"
+        onClick={() => handleEmotionClick("colere")}
+      />
+      </div>  
     </div>
   );
 };
