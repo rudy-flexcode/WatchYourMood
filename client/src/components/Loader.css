@@ -9,3 +9,11 @@
   gap: 20px;
   letter-spacing: 15px;
 }
+@media (max-width: 680px) {
+  .loader {
+    margin-top: 35%;
+    font-size: 30px;
+    gap: 20px;
+    letter-spacing: 15px;
+  }
+}

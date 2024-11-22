@@ -1,17 +1,24 @@
-import type React from "react";
 import colereImage from "../assets/images/colere.png";
 import joieImage from "../assets/images/joie.png";
 import peurImage from "../assets/images/peur.png";
 import tristesseImage from "../assets/images/tristesse.png";
 import "./Avatar.css";
 
-const Avatar: React.FC = () => {
+const Avatar = () => {
   return (
     <div className="blockAcceuil">
-      <img className="block1" src={joieImage} alt="vice versa joie" />
-      <img className="block2" src={tristesseImage} alt="vice versa triste" />
-      <img className="block3" src={peurImage} alt="vice versa peur" />
-      <img className="block4" src={colereImage} alt="vice versa colere" />
+      <div className="block" data-name="joie">
+        <img src={joieImage} alt="vice versa joie" />
+      </div>
+      <div className="block" data-name="tristesse">
+        <img src={tristesseImage} alt="vice versa triste" />
+      </div>
+      <div className="block" data-name="peur">
+        <img src={peurImage} alt="vice versa peur" />
+      </div>
+      <div className="block" data-name="colere">
+        <img src={colereImage} alt="vice versa colere" />
+      </div>
     </div>
   );
 };

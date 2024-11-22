@@ -1,65 +1,69 @@
-/*MOBILE FIRST - ACCUEIL*/
+.blockAcceuil {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: transparent;
+  max-width: 100%;
+}
+
+.block {
+  position: relative;
+  max-width: 13%;
+  transition: opacity 0.1s ease;
+}
+
+.block img {
+  width: 100%;
+  height: auto;
+}
+
+.block:hover {
+  opacity: 0.5;
+}
+
+.block::before {
+  content: attr(data-name);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 26px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.block:hover::before {
+  opacity: 1;
+}
+
+/* MOBILE FIRST - ACCUEIL */
 @media (max-width: 680px) {
   .blockAcceuil {
-    margin-top: -20%;
+    margin-bottom: 10%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+  }
+
+  .block {
+    margin: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    max-width: 100%;
+    margin-top: -1em;
   }
 
-  .block1 {
-    max-width: 170%;
-    margin-left: -50%;
-    margin-top: -3%;
-  }
-  .block2 {
-    max-width: 180%;
-    margin-left: -50%;
-    margin-top: -60%;
-  }
-  .block3 {
-    max-width: 170%;
-    margin-right: -49%;
-    margin-top: -178%;
-  }
-  .block4 {
-    max-width: 141%;
-    margin-right: -50%;
-    margin-top: -100%;
-  }
-}
-
-/*RESPONSIVE DESKTOP,TABLETTE ACCUEIL*/
-@media (min-width: 681px) {
-  .blockAcceuil {
+  .block img {
+    width: 250%;
+    height: auto;
+    max-width: none;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 4%;
-
-    max-width: 100%;
-  }
-
-  .block1 {
-    max-width: 54%;
-    margin-left: -10%;
-    margin-right: 5%;
-  }
-  .block2 {
-    max-width: 56%;
-    margin-left: -45%;
-  }
-  .block3 {
-    max-width: 52%;
-    margin-left: -40%;
-  }
-  .block4 {
-    max-width: 42%;
-    margin-left: -33%;
+    margin: auto;
   }
 }
