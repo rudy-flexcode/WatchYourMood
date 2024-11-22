@@ -47,11 +47,11 @@ function MyMood() {
           />
           {movies.map((movie) => (
             <div className="search_results" key={movie.id}>
-              <h2>{movie.title}</h2>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
               />
+              <h2>{movie.title}</h2>
             </div>
           ))}
         </div>
