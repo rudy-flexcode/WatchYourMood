@@ -82,9 +82,6 @@ function Search() {
                 <button className="like-button" type="button">
                   👍🏼
                 </button>
-                <button className="dislike-button" type="button">
-                  👎🏼
-                </button>
               </button>
             </div>
             <img
