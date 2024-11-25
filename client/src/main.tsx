@@ -17,12 +17,12 @@ import MyMood from "./pages/MyMood";
 
 import Watchlist from "./pages/Watchlist";
 
+// Importe le composant styleprovider de StyleContext
+import { StyleProvider } from "./context/StyleContext";
+
 // Import additional components for new routes
 
 // Try creating these components in the "pages" folder
-
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
 
 /* ************************************************************************* */
 
@@ -87,9 +87,16 @@ if (rootElement == null) {
 }
 
 // Render the app inside the root element
+//Enveloppement de RouterProvider avec StyleProvider : Cela garantit que tous les composants ont accès au contexte, y compris ceux rendus par le routage.
 createRoot(rootElement).render(
   <StrictMode>
-    <RouterProvider router={router} />
+      {/** StyleProvider etant le 1er provider ne connait pas les hooks de ses enfants  */}
+    <StyleProvider>
+      {/**
+       *RouterProvider étant l'enfant de StyleProvider, il connait ses hooks.
+       */}
+      <RouterProvider router={router} />
+    </StyleProvider>
   </StrictMode>,
 );
 

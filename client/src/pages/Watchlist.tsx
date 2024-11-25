@@ -1,18 +1,21 @@
 import Logo from "../components/Logo";
-import Moovie from "../components/Moovies";
 import Nav from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Watchlist() {
   return (
     <>
       <header>
         <Logo />
-        <Nav />
+        <Nav isInWatchlist={true}/>
       </header>
 
       <main>
-        <Moovie />
+        
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }
