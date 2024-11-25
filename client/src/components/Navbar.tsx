@@ -7,6 +7,7 @@ function Nav() {
       <li>Mon Mood</li>
       <Link to="/watchlist">
         <li>Watchlist</li>
+        <Link to="/watchlist">Watchlist</Link>
       </Link>
     </ul>
   );
