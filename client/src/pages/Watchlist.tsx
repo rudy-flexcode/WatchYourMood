@@ -28,9 +28,9 @@ function Watchlist() {
         <Nav isInWatchlist={true} />
       </header>
       <main>
-       <footer>
+        <footer>
           <Footer />
-       </footer>
+        </footer>
       </main>
     </>
   );
