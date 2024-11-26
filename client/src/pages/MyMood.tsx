@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import colereImage from "../assets/images/colere-entier.png";
 import joieImage from "../assets/images/joie-entier.png";
 import peurImage from "../assets/images/peur-entier.png";
-import tristeImage from "../assets/images/triste-entier.png";
+import tristesseImage from "../assets/images/triste-entier.png";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
+
 import "./MyMood.css";
 
 function MyMood() {
@@ -22,7 +23,7 @@ function MyMood() {
   const emotionImage: Record<string, string> = {
     joie: joieImage,
     peur: peurImage,
-    triste: tristeImage,
+    tristesse: tristesseImage,
     colere: colereImage,
   };
 
@@ -40,11 +41,6 @@ function MyMood() {
       </header>
       <main>
         <div className="search_result">
-          <img
-            className="personnage-image"
-            src={currentImage}
-            alt={emotionID || "default"}
-          />
           {movies.map((movie) => (
             <div className="search_results" key={movie.id}>
               <img
@@ -57,6 +53,12 @@ function MyMood() {
         </div>
       </main>
       <Footer />
+      <img
+        className="personnage-image"
+        src={currentImage}
+        alt={emotionID || "default"}
+      />
+      
     </>
   );
 }

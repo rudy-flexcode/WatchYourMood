@@ -1,10 +1,10 @@
 .flexbox,
 .footer {
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-align: center;
   background-color: rgb(255, 223, 56);
   border: 2px solid;
-  text-shadow: 3px 3px 8px black;
+  /*text-shadow: 3px 3px 8px black;*/
   color: black;
   border-radius: 10px;
   padding: 10px;
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40%;
+  /*margin-top: 40%;*/
   height: 12vh;
   flex-direction: row;
 }
@@ -70,3 +70,14 @@
     text-align: center;
   }
 }
+
+.personnage-image {
+  position:fixed;
+  bottom: -50px;
+  left:-6%;
+  z-index: 1;
+  
+  
+}
+
+
