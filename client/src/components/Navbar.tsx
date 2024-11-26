@@ -4,9 +4,9 @@ import { useStyleContext } from "../context/StyleContext";
 
 interface NavType {
   isInMyMood?: boolean;
-  isInWatchlist?:boolean;
+  isInWatchlist?: boolean;
 }
-function Nav({ isInMyMood, isInWatchlist}: NavType) {
+function Nav({ isInMyMood, isInWatchlist }: NavType) {
   const { backgroundColor } = useStyleContext();
   const textColor = backgroundColor === "#FFDF38" ? "black" : "white";
 

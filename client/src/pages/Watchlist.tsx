@@ -1,20 +1,18 @@
+import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
-import Footer from "../components/Footer";
 
 function Watchlist() {
   return (
     <>
       <header>
         <Logo />
-        <Nav isInWatchlist={true}/>
+        <Nav isInWatchlist={true} />
       </header>
 
-      <main>
-        
-      </main>
+      <main></main>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </>
   );

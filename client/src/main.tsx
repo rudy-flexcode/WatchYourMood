@@ -90,7 +90,7 @@ if (rootElement == null) {
 //Enveloppement de RouterProvider avec StyleProvider : Cela garantit que tous les composants ont accès au contexte, y compris ceux rendus par le routage.
 createRoot(rootElement).render(
   <StrictMode>
-      {/** StyleProvider etant le 1er provider ne connait pas les hooks de ses enfants  */}
+    {/** StyleProvider etant le 1er provider ne connait pas les hooks de ses enfants  */}
     <StyleProvider>
       {/**
        *RouterProvider étant l'enfant de StyleProvider, il connait ses hooks.

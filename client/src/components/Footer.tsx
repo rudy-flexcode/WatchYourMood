@@ -12,11 +12,7 @@ function Footer() {
       <p>Par Manon Moutier, Rudy Robert, Marc Juvénal & Nabil Afenich</p>
       <div className="click-event box">
         <Link to="/contact">
-          <button
-            type="button"
-            id="btn-1"
-            style={{ backgroundColor }}
-          >
+          <button type="button" id="btn-1" style={{ backgroundColor }}>
             Contactez-nous
           </button>
         </Link>
