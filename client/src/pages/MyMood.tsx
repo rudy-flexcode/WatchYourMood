@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useStyleContext } from "../context/StyleContext";
@@ -8,6 +9,7 @@ import peurImage from "../assets/images/peur-entier.png";
 import tristeImage from "../assets/images/triste-entier.png";
 
 import Footer from "../components/Footer";
+import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
 
@@ -20,13 +22,24 @@ function MyMood() {
   getColors(emotionID);
 
   const movies = useLoaderData() as {
-    //const pour récupérer les datas du loader créé dans main.tsx
     id: number;
     title: string;
-    poster_path: string; //on définit les données et le type qu'on récupère
+    poster_path: string;
   }[];
 
-  //Mapping entre EmotionID dans l'url et l'image qu'on veut afficher
+  const [isLoading, setIsLoading] = useState(true); // État de chargement
+
+  useEffect(() => {
+    // Simule un délai pour afficher le Loader (ou le temps de chargement des données)
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Stoppe le chargement
+    }, 1000); // 1 seconde de chargement
+
+    // Nettoyage du timer si le composant est démonté
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Mapping entre EmotionID dans l'URL et l'image à afficher
   const emotionImage: Record<string, string> = {
     joie: joieImage,
     peur: peurImage,
@@ -34,11 +47,16 @@ function MyMood() {
     colere: colereImage,
   };
 
-  // vérifie si on a bien un emotionID dans l'URL, si oui on affiche l'image associée sinon image par défaut.
+  // Sélection de l'image courante
   const currentImage =
     emotionID && emotionImage[emotionID]
       ? emotionImage[emotionID]
       : "../assets/images/default.png";
+
+  // Affichage du Loader pendant le chargement
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
