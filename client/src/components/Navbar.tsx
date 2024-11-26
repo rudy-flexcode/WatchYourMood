@@ -9,7 +9,7 @@ interface NavType {
 function Nav({ isInMyMood, isInWatchlist }: NavType) {
   const { backgroundColor } = useStyleContext();
   const textColor = backgroundColor === "#FFDF38" ? "black" : "white";
- return (
+  return (
     <ul>
       <Link to="/mood">
         <li
