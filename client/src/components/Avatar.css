@@ -44,7 +44,7 @@
 /* MOBILE FIRST - ACCUEIL */
 @media (max-width: 680px) {
   .blockAcceuil {
-    margin-bottom: 10%;
+    margin-top: 1rem;
     max-width: 100%;
     flex-wrap: wrap;
     justify-content: center;
