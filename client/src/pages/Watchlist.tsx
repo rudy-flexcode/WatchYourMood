@@ -1,6 +1,5 @@
-
-import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
@@ -29,9 +28,9 @@ function Watchlist() {
         <Nav isInWatchlist={true} />
       </header>
       <main>
-      <footer>
+       <footer>
         <Footer />
-      </footer>
+       </footer>
       </main>
     </>
   );
