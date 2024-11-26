@@ -10,19 +10,20 @@ type Movie = {
 };
 
 function Search() {
-  const [datas, setDatas] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Récupérer les films
     fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
     )
       .then((response) => response.json())
-      .then((json) => setDatas(json.results));
-  }, []);
+      .then((json) => setMovies(json.results));
+  });
 
   // Gère la recherche
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,7 +46,7 @@ function Search() {
   };
 
   // Filtre les films
-  const filteredDatas = datas.filter((data) =>
+  const filteredDatas = movies.filter((data) =>
     data.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 

@@ -1,0 +1,76 @@
+.loader {
+  color: #eb2027;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+  font-size: 50px;
+  gap: 20px;
+  letter-spacing: 17px;
+}
+@media (min-width: 681px) {
+  /* test loader fusion */
+  .fusion {
+    width: 100%; /* Ajuster pour s'assurer qu'elle prend tout l'écran en largeur */
+    height: 150px; /* Ajuste cette valeur pour la hauteur du loader */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le contenu horizontalement */
+    overflow: hidden;
+    position: fixed; /* Positionne de manière fixe */
+    bottom: 0; /* Fixe la `div` en bas de l'écran */
+  }
+
+  .fusion img {
+    position: relative;
+    animation: move 5s linear infinite;
+  }
+  .imgtriste {
+    max-width: 20%;
+  }
+}
+@keyframes move {
+  0% {
+    left: -150px; /* Commence en dehors de l'écran à gauche */
+  }
+  50% {
+    left: calc(100% - 10px); /* Ajuste cette valeur selon la largeur de l'image */
+  }
+  100% {
+    left: -200px; /* Revient en dehors de l'écran à gauche */
+  }
+}
+
+@media (max-width: 680px) {
+  .loader {
+    margin-top: 35%;
+
+    font-size: 30px;
+    gap: 20px;
+    letter-spacing: 15px;
+  }
+  .fusion {
+    width: 100%; /* Ajuster pour s'assurer qu'elle prend tout l'écran en largeur */
+    height: 150px; /* Ajuste cette valeur pour la hauteur du loader */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le contenu horizontalement */
+    overflow: hidden;
+    position: fixed; /* Positionne de manière fixe */
+    bottom: 0; /* Fixe la `div` en bas de l'écran */
+    margin-bottom: 10px;
+  }
+  .fusion img {
+    position: relative;
+    animation: move 5s linear infinite;
+  }
+  .imgtriste {
+    max-width: 90%;
+  }
+}
+@media (min-width: 1600px) {
+  .fusion {
+    height: 180px;
+  }
+}
