@@ -1,12 +1,12 @@
-import FavoritesPage from "../components/FavoritesPage";
 import { useEffect, useState } from "react";
+import FavoritesPage from "../components/FavoritesPage";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
 
 function Watchlist() {
-    const [isLoading, setIsLoading] = useState(true); // État de chargement
+const [isLoading, setIsLoading] = useState(true); // État de chargement
 
   useEffect(() => {
     // Simule un délai de chargement (par ex. 2 secondes)
@@ -19,9 +19,9 @@ function Watchlist() {
   }, []);
 
   if (isLoading) {
-    return <Loader />; // Affiche le Loader tant que isLoading est true
+  return <Loader />; // Affiche le Loader tant que isLoading est true
   }
-    return (
+  return (
     <>
       <header>
         <Logo />
