@@ -72,12 +72,8 @@
 }
 
 .personnage-image {
-  position:fixed;
+  position: fixed;
   bottom: -50px;
-  left:-6%;
+  left: -6%;
   z-index: 1;
-  
-  
 }
-
-

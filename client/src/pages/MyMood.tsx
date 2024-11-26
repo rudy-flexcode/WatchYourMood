@@ -58,7 +58,6 @@ function MyMood() {
         src={currentImage}
         alt={emotionID || "default"}
       />
-      
     </>
   );
 }
