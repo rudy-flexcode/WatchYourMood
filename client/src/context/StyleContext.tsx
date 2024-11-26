@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 // Définir le type des styles
 interface StyleContextType {
   backgroundColor: string; // couleur actuelle
-  getColors: (newColor: string) => void; // fonction pour changer la couleur
+  getColors: (newColor: string | null) => void; // fonction pour changer la couleur
 }
 
 interface ChildrenType {
@@ -19,7 +19,7 @@ export function StyleProvider({ children }: ChildrenType) {
   /**
    * Une fonction qui va récuperer la couleur de l'émotion
    */
-  const getColors = (emotion: string) => {
+  const getColors = (emotion: string | null) => {
     let colorEmotion = "#FFDF38";
     switch (emotion) {
       case "peur":

@@ -16,10 +16,10 @@ import Nav from "../components/Navbar";
 import "./MyMood.css";
 
 function MyMood() {
-  const { emotionID } = useParams<{ emotionID: string }>();
+  const { emotionID } = useParams();
   const { getColors } = useStyleContext();
 
-  getColors(emotionID);
+  getColors(emotionID ?? null);
 
   const movies = useLoaderData() as {
     id: number;
