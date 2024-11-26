@@ -47,16 +47,9 @@
 /* Footer */
 @media (max-width: 480px) {
   .flexbox {
-    padding: 15px;
+    padding: 1rem;
   }
 
-  .click-event button {
-    font-size: 1.2rem;
-  }
-
-  .flexbox p {
-    font-size: 1rem;
-  }
 }
 @media (max-width: 768px) {
   .flexbox {
