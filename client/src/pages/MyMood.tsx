@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useStyleContext } from "../context/StyleContext";
+
 import colereImage from "../assets/images/colere-entier.png";
 import joieImage from "../assets/images/joie-entier.png";
 import peurImage from "../assets/images/peur-entier.png";
 import tristeImage from "../assets/images/triste-entier.png";
+
 import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
+
 import "./MyMood.css";
 
 function MyMood() {
-  const { emotionID } = useParams<{ emotionID: string }>();
+  const { emotionID } = useParams();
+  const { getColors } = useStyleContext();
+
+  getColors(emotionID ?? null);
+
   const movies = useLoaderData() as {
     id: number;
     title: string;
@@ -35,7 +43,7 @@ function MyMood() {
   const emotionImage: Record<string, string> = {
     joie: joieImage,
     peur: peurImage,
-    triste: tristeImage,
+    tristesse: tristeImage,
     colere: colereImage,
   };
 

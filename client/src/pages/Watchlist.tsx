@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
-import Moovie from "../components/Moovies";
 import Nav from "../components/Navbar";
 
 function Watchlist() {
@@ -25,10 +25,12 @@ function Watchlist() {
     <>
       <header>
         <Logo />
-        <Nav />
+        <Nav isInWatchlist={true} />
       </header>
       <main>
-        <Moovie />
+        <footer>
+          <Footer />
+        </footer>
       </main>
     </>
   );

@@ -1,32 +1,36 @@
-.flexbox,
-.footer {
-  font-weight: bold;
+@font-face {
+  font-family: "Irish Grover";
+  src: url(../public/fonts/IrishGrover-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+:root {
+  --main-font: "Irish Grover";
+  --second-font: "Inter";
+  --bg-color: #000000;
+  --text-color: white;
+}
+
+.flexbox {
   text-align: center;
-  background-color: rgb(255, 223, 56);
-  border: 2px solid;
-  text-shadow: 3px 3px 8px black;
   color: black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 2rem;
   font-size: 1.0rem;
-  min-height: 70px;
+  font-family: var(--second-font);
+  min-height: 4rem;
   position: relative;
   bottom: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40%;
-  height: 12vh;
   flex-direction: row;
 }
 
-.flexbox .text-content {
-  flex: 1;
-}
-
 .click-event button {
-  background-color: rgba(255, 222, 56);
   color: rgb(27, 26, 26);
   border: none;
   text-align: center;
@@ -34,7 +38,6 @@
   cursor: pointer;
   border-radius: 15px;
   transition: background-color 0.3s ease;
-  padding: 10px 20px;
 }
 
 .click-event button:hover {
@@ -44,15 +47,7 @@
 /* Footer */
 @media (max-width: 480px) {
   .flexbox {
-    padding: 15px;
-  }
-
-  .click-event button {
-    font-size: 1.2rem;
-  }
-
-  .flexbox p {
-    font-size: 1rem;
+    padding: 1rem;
   }
 }
 @media (max-width: 768px) {
