@@ -3,6 +3,7 @@
 .search_result {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 6%;
 }
 
 .search_results {

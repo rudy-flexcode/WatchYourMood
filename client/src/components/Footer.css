@@ -65,3 +65,10 @@
     text-align: center;
   }
 }
+
+.personnage-image {
+  position: fixed;
+  bottom: -50px;
+  left: -6%;
+  z-index: 1;
+}
