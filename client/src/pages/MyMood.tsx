@@ -5,6 +5,7 @@ import colereImage from "../assets/images/colere-entier.png";
 import joieImage from "../assets/images/joie-entier.png";
 import peurImage from "../assets/images/peur-entier.png";
 import tristesseImage from "../assets/images/triste-entier.png";
+
 import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
