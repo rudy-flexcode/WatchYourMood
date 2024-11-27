@@ -4,6 +4,7 @@ import Logo from "../components/Logo";
 import Moovie from "../components/Moovies";
 import Nav from "../components/Navbar";
 import Search from "../components/Search";
+import Footer from "../components/Footer";
 
 function Base() {
   const [isLoading, setIsLoading] = useState(true); // État de chargement
@@ -32,6 +33,9 @@ function Base() {
         <Search />
         <Moovie />
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }
