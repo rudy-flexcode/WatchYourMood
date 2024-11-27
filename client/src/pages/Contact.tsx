@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Loader from "../components/Loader";
+import Logo from "../components/Logo";
+import './Contact.css'
 
 const Contact: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true); // État de chargement
@@ -20,10 +22,13 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <div>
+    <>
+    <div className="Header-contact">
+      <Logo/>
       <h1>Contactez-nous</h1>
-      <ContactForm />
     </div>
+      <ContactForm />
+    </>
   );
 };
 
