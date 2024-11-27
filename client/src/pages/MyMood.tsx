@@ -40,7 +40,7 @@ function MyMood() {
     return () => clearTimeout(timer);
   }, []);
 
-   // Gère le recto verso au clic, en fonction de l'ID du film
+  // Gère le recto verso au clic, en fonction de l'ID du film
   const handleClick = (id: number) => {
     setClicked((clicked) => ({
       [id]: !clicked[id], // Inverse l'état de visibilité pour l'ID du film cliqué

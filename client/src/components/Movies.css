@@ -56,72 +56,74 @@
   padding: 0.2rem;
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-  /*EMOTICONES*/
+/*EMOTICONES*/
 
-  .button-container {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.button-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button-container button {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-style: none;
+  width: 14%;
+}
+
+.like-button,
+.dislike-button {
+  filter: brightness(3);
+}
+/*RESPONSIVE TABLETTES*/
+@media screen and (min-width: 681px) and (max-width: 1023px) {
+  /*MOVIES*/
+  .search_results {
+    width: 32%;
+  }
+
+  .recto,
+  .verso {
+    height: 30rem;
+  }
+
+  .verso p {
+    padding: 2rem;
+    font-size: 1rem;
   }
 
   .button-container button {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    border-style: none;
-    width: 14%;
+    font-size: 1rem;
+  }
+}
+
+/*RESPONSIVE DESKTOP*/
+@media screen and (min-width: 1024px) {
+  /*MOVIES*/
+  .search_results {
+    width: 25%;
+  }
+  .button-container {
+    height: 3rem;
   }
 
-  .like-button,
-  .dislike-button {
-    filter: brightness(3);
-  }
-  /*RESPONSIVE TABLETTES*/
-  @media screen and (min-width: 681px) and (max-width: 1023px) {
-    /*MOVIES*/
-    .search_results {
-      width: 32%;
-    }
-
-    .recto, .verso{
-      height: 30rem;
-    }
-
-    .verso p {
-      padding: 2rem;
-      font-size: 1rem;
-    }
-
-    .button-container button {
-      font-size: 1rem;
-    }
+  .button-container button {
+    width: 11%;
+    font-size: 1.5rem;
   }
 
-  /*RESPONSIVE DESKTOP*/
-  @media screen and (min-width: 1024px) {
-    /*MOVIES*/
-    .search_results {
-      width: 25%;
-    }
-    .button-container {
-      height: 3rem;
-    }
-
-    .button-container button {
-      width: 11%;
-      font-size: 1.5rem;
-    }
-
-    .recto, .verso{
-      height: 33rem;
-    }
-
-    .verso p{
-      font-size: 1rem;
-      padding:1rem;
-    }
+  .recto,
+  .verso {
+    height: 33rem;
   }
+
+  .verso p {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

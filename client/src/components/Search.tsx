@@ -6,31 +6,27 @@ type Movie = {
   id: number;
   title: string;
   poster_path: string;
-  overview:string;
-  vote_average:number;
-  release_date:string;
+  overview: string;
+  vote_average: number;
+  release_date: string;
 };
 
 function Search() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
-  const [clicked, setClicked] = useState<{ [key: number]: boolean }>(
-    {},
-  );
+  const [clicked, setClicked] = useState<{ [key: number]: boolean }>({});
 
-
-  
   useEffect(() => {
     // Récupérer les films
     fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&language=fr",
     )
-    .then((response) => response.json())
-    .then((json) => setMovies(json.results));
-  },[]);
-  
-   // Gère le recto verso au clic, en fonction de l'ID du film
+      .then((response) => response.json())
+      .then((json) => setMovies(json.results));
+  }, []);
+
+  // Gère le recto verso au clic, en fonction de l'ID du film
   const handleClick = (id: number) => {
     setClicked((clicked) => ({
       [id]: !clicked[id], // Inverse l'état de visibilité pour l'ID du film cliqué
