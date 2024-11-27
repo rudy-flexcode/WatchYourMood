@@ -72,7 +72,7 @@
 
 /*Bordure animée pour le choix de l'émotion*/
 .highlight {
-  border: 2px solid #FFD700; /* Bordure dorée */
+  border: 2px solid #ffd700; /* Bordure dorée */
   padding: 10px;
   transform: scale(1.1); /* Agrandissement léger */
   transition: transform 2.3s ease, border 1.3s ease; /* Transition douce */

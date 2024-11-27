@@ -17,7 +17,10 @@ const Avatar = ({
 
   return (
     <div className="blockAcceuil">
-      <div className={`block ${selectedEmotion === "joie" ? "highlight" : ""}`} data-name="joie">
+      <div
+        className={`block ${selectedEmotion === "joie" ? "highlight" : ""}`}
+        data-name="joie"
+      >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
           id="joie"
@@ -26,7 +29,10 @@ const Avatar = ({
           onClick={() => handleClick("joie")}
         />
       </div>
-      <div className={`block ${selectedEmotion === "tristesse" ? "highlight" : ""}`} data-name="tristesse">
+      <div
+        className={`block ${selectedEmotion === "tristesse" ? "highlight" : ""}`}
+        data-name="tristesse"
+      >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
           id="tristesse"
@@ -35,7 +41,10 @@ const Avatar = ({
           onClick={() => handleClick("tristesse")}
         />
       </div>
-      <div className={`block ${selectedEmotion === "peur" ? "highlight" : ""}`} data-name="peur">
+      <div
+        className={`block ${selectedEmotion === "peur" ? "highlight" : ""}`}
+        data-name="peur"
+      >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
           id="peur"
@@ -44,7 +53,10 @@ const Avatar = ({
           onClick={() => handleClick("peur")}
         />
       </div>
-      <div className={`block ${selectedEmotion === "colere" ? "highlight" : ""}`} data-name="colere">
+      <div
+        className={`block ${selectedEmotion === "colere" ? "highlight" : ""}`}
+        data-name="colere"
+      >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <img
           id="colere"

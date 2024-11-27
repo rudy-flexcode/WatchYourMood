@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
 
   return (
     <div>
-      <Logo /> 
+      <Logo />
       <h1>Contactez-nous</h1>
       <ContactForm />
     </div>
