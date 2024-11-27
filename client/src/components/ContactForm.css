@@ -1,9 +1,9 @@
 form {
   background: #fff;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 30px;
+  border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 30px); /* Toujours un espace autour */
+  width: calc(100% - 30px);
   max-width: 500px;
   margin: 30px auto;
   font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@ form {
 
 form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -22,13 +22,13 @@ form textarea {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
 }
 
 form button {
   background: #4caf50;
-  color: #fff;
+  color: #ffffffdf;
   padding: 12px;
   border: none;
   border-radius: 5px;
@@ -45,6 +45,6 @@ h1 {
   font-family: var(--main-font);
   color: #ccc;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive */
+  margin-bottom: 40px;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
