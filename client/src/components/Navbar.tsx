@@ -11,20 +11,22 @@ function Nav({ isInMyMood, isInWatchlist }: NavType) {
   const textColor = backgroundColor === "#FFDF38" ? "black" : "white";
   return (
     <ul>
-      <Link to="/mood">
-        <li
+      <li
           className={isInMyMood ? "mon-mood" : ""}
           style={isInMyMood ? { backgroundColor, color: textColor } : {}}
         >
+        <Link to="/mood/:emotionID">
           Mon Mood
-        </li>
-      </Link>
+        </Link>
+      </li>
+      <Link to="/watchlist">
       <li
         className={isInWatchlist ? "mon-mood" : ""}
         style={isInWatchlist ? { backgroundColor, color: textColor } : {}}
       >
         Watchlist
       </li>
+      </Link>
     </ul>
   );
 }
