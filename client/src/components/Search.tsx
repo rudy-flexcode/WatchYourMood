@@ -76,6 +76,13 @@ function Search() {
                 {favorites.some((fav) => fav.id === data.id)
                   ? "★ Retirer"
                   : "☆ Ajouter"}
+
+                <button className="add-button" type="button">
+                  ✔︎
+                </button>
+                <button className="like-button" type="button">
+                  👍🏼
+                </button>
               </button>
             </div>
             <img

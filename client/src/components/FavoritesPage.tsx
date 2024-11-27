@@ -19,7 +19,7 @@ const FavoritesPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Mes Favoris</h1>
+      <h1>watchlist</h1>
       <div className="favorites-list">
         {favorites.length > 0 ? (
           favorites.map((movie) => (

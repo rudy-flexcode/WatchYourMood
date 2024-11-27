@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useStyleContext } from "../context/StyleContext";
-
 import colereImage from "../assets/images/colere-entier.png";
 import joieImage from "../assets/images/joie-entier.png";
 import peurImage from "../assets/images/peur-entier.png";
@@ -12,7 +10,7 @@ import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
 import Nav from "../components/Navbar";
-
+import { useStyleContext } from "../context/StyleContext";
 import "./MyMood.css";
 
 function MyMood() {
