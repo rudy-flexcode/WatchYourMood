@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Loader from "../components/Loader";
+import "./Contact.css";
 import Logo from "../components/Logo";
 
 const Contact: React.FC = () => {
@@ -21,11 +22,11 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Logo />
       <h1>Contactez-nous</h1>
       <ContactForm />
-    </div>
+    </>
   );
 };
 

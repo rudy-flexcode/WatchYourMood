@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       }
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&with_genres=${emotionID}&language=fr-FR&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&with_genres=${emotionID}&language=fr`,
         );
         const data = await response.json();
         return data.results;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import Logo from "../components/Logo";
 import Moovie from "../components/Moovies";
@@ -32,6 +33,9 @@ function Base() {
         <Search />
         <Moovie />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

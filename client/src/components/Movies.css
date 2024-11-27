@@ -1,9 +1,24 @@
+@font-face {
+  font-family: "Irish Grover";
+  src: url(../public/fonts/IrishGrover-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+:root {
+  --main-font: "Irish Grover";
+  --second-font: "Inter";
+  --bg-color: #000000;
+  --text-color: white;
+}
+
 /*MOBILE FIRST*/
 /*MOVIES*/
 .search_result {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 6%;
 }
 
 .search_results {
@@ -14,9 +29,37 @@
   margin-bottom: 1.5rem;
 }
 
-.search_results img {
+.recto,
+.verso {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  font-size: 0.5rem;
+  height: 12rem;
+  background-color: #141414; /* Noir profond */
+  color: #fff; /* Texte blanc */
+  border: 1px solid #333; /* Bordure subtile */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Ombre subtile */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.recto img {
   width: 80%;
 }
+
+.verso p {
+  font-family: var(--second-font);
+  padding: 0.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
 /*EMOTICONES*/
 
 .button-container {
@@ -44,6 +87,16 @@
     width: 32%;
   }
 
+  .recto,
+  .verso {
+    height: 30rem;
+  }
+
+  .verso p {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
   .button-container button {
     font-size: 1rem;
   }
@@ -62,5 +115,15 @@
   .button-container button {
     width: 11%;
     font-size: 1.5rem;
+  }
+
+  .recto,
+  .verso {
+    height: 33rem;
+  }
+
+  .verso p {
+    font-size: 1rem;
+    padding: 1rem;
   }
 }
