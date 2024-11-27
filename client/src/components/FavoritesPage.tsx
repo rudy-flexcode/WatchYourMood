@@ -19,8 +19,12 @@ function FavoritesPage() {
       const savedFavorites = JSON.parse(
         localStorage.getItem("favorites") || "[]",
       );
-      const savedViewed = JSON.parse(localStorage.getItem("viewed") || "[]");
-      const savedLikes = JSON.parse(localStorage.getItem("likes") || "[]");
+      const savedViewed = JSON.parse(
+        localStorage.getItem("viewed") || "[]"
+      );
+      const savedLikes = JSON.parse(
+        localStorage.getItem("likes") || "[]")
+        ;
       const savedDislikes = JSON.parse(
         localStorage.getItem("dislikes") || "[]",
       );
@@ -107,7 +111,7 @@ function FavoritesPage() {
                 </div>
               ))
             ) : (
-              <p>Aucun film déliké.</p>
+              <p>Aucun film non aimé.</p>
             )}
           </div>
         );

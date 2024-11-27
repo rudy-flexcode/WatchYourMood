@@ -28,9 +28,9 @@ function MyMood() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [favorites, setFavorites] = useState<Movie[]>([]);
-  const [viewed, setViewed] = useState<number[]>([]);
-  const [likes, setLikes] = useState<number[]>([]);
-  const [dislikes, setDislikes] = useState<number[]>([]);
+  const [viewed, setViewed] = useState<Movie[]>([]);
+  const [likes, setLikes] = useState<Movie[]>([]);
+  const [dislikes, setDislikes] = useState<Movie[]>([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,12 +80,19 @@ function MyMood() {
     }
   };
 
-  const toggleViewed = (id: number) => {
-    const updatedViewed = viewed.includes(id)
-      ? viewed.filter((viewedId) => viewedId !== id)
-      : [...viewed, id];
-    setViewed(updatedViewed);
-    localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+  const toggleViewed = (movie: Movie) => {
+    const isViewed = viewed.some((view) => view.id === movie.id);
+    console.log({ isViewed });
+
+    if (isViewed) {
+      const updatedViewed = viewed.filter((view) => view.id !== movie.id);
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+    } else {
+      const updatedViewed = [...viewed, movie];
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+    }
   };
 
   const toggleLike = (id: number) => {
@@ -142,10 +149,10 @@ function MyMood() {
                 </button>
                 <button
                   className={`viewed-button ${
-                    viewed.includes(movie.id) ? "active" : ""
+                    viewed.some((view) => view.id === movie.id) ? "active" : ""
                   }`}
                   type="button"
-                  onClick={() => toggleViewed(movie.id)}
+                  onClick={() => toggleViewed(movie)}
                 >
                   ✔︎
                 </button>
