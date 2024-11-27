@@ -18,6 +18,7 @@
 .block img {
   width: 100%;
   height: auto;
+  border-radius: 50%;
 }
 
 .block:hover {
@@ -44,7 +45,7 @@
 /* MOBILE FIRST - ACCUEIL */
 @media (max-width: 680px) {
   .blockAcceuil {
-    margin-bottom: 10%;
+    margin-top: 1rem;
     max-width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -65,5 +66,14 @@
     max-width: none;
     display: flex;
     margin: auto;
+    border-radius: 50%;
   }
+}
+
+/*Bordure animée pour le choix de l'émotion*/
+.highlight {
+  border: 2px solid #FFD700; /* Bordure dorée */
+  padding: 10px;
+  transform: scale(1.1); /* Agrandissement léger */
+  transition: transform 2.3s ease, border 1.3s ease; /* Transition douce */
 }

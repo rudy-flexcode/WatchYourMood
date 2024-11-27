@@ -4,29 +4,38 @@ import Avatar from "./components/Avatar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Logo from "./components/Logo";
-
 import "./App.css";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // L'état de chargement
+  const [suivantButton, setSuivantButton] = useState(false); // Contrôle de l'apparition du bouton
+  const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null); // L'émotion sélectionnée
 
-  const [suivantButton, setSuivantButton] = useState(false); // État du bouton, par défaut : ne se montre pas.
-  const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null); // État pour l'émotion sélectionnée
-
+  // Fonction pour gérer le clic sur les émotions
   const handleEmotionClick = (emotion: string) => {
-    setSelectedEmotion(emotion);
-    setSuivantButton(true);
-  }; // Fonction permettant qu'au clic d'une des émotions, le bouton suivant change d'état et apparaît.
+    setSelectedEmotion(emotion); // Met à jour l'émotion sélectionnée
+    setSuivantButton(true); // Affiche le bouton "Suivant"
+  };
 
+  // Utilisation de useEffect pour gérer le délai de chargement
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    // Simule un délai de 5 secondes avant de masquer le loader
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Après 5 secondes, charger la page
+    }, 2000);
+
+    // Nettoyage du timer lors du démontage du composant
     return () => clearTimeout(timer);
   }, []);
 
+  // Si le loader est encore affiché, on ne montre pas la page principale
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  // Si le chargement est terminé, affiche le contenu principal
   return (
     <>
-      {isLoading && <Loader />}
-
       <header>
         <Logo />
       </header>
