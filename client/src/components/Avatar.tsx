@@ -18,7 +18,7 @@ const Avatar = ({
   return (
     <div className="blockAcceuil">
       <div
-        className={`block ${selectedEmotion === "joie" ? "highlight" : ""}`}
+        className={`block ${selectedEmotion === "joie" ? "highlight happy" : ""}`}
         data-name="joie"
       >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
@@ -30,7 +30,7 @@ const Avatar = ({
         />
       </div>
       <div
-        className={`block ${selectedEmotion === "tristesse" ? "highlight" : ""}`}
+        className={`block ${selectedEmotion === "tristesse" ? "highlight sad" : ""}`}
         data-name="tristesse"
       >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
@@ -42,7 +42,7 @@ const Avatar = ({
         />
       </div>
       <div
-        className={`block ${selectedEmotion === "peur" ? "highlight" : ""}`}
+        className={`block ${selectedEmotion === "peur" ? "highlight fear" : ""}`}
         data-name="peur"
       >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
@@ -54,7 +54,7 @@ const Avatar = ({
         />
       </div>
       <div
-        className={`block ${selectedEmotion === "colere" ? "highlight" : ""}`}
+        className={`block ${selectedEmotion === "colere" ? "highlight angry" : ""}`}
         data-name="colere"
       >
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
