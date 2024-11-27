@@ -5,3 +5,50 @@
 h2 {
   font-size: 0.7em;
 }
+
+.favorite-button.active {
+  color: gold;
+}
+
+.viewed-button.active {
+  color: green;
+}
+
+.like-button.active {
+  color: blue;
+  background-color: rgb(3, 19, 63);
+  border-radius: 50%;
+}
+
+.dislike-button.active {
+  color: red;
+  background-color: rgb(236, 4, 4);
+  border-radius: 50%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: right;
+  gap: 2px; /* Ajout d'un espacement entre les boutons */
+  margin-bottom: 10px; /* Espace entre les boutons et la carte */
+}
+
+.button-container button {
+  margin: 0 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.7em;
+  transition: color 0.3s, transform 0.3s; /* Ajout de la transition de transformation */
+}
+
+.button-container button:hover {
+  opacity: 0.7;
+}
+
+.search_results {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

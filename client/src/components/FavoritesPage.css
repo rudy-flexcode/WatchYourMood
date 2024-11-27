@@ -1,0 +1,124 @@
+/* Conteneur principal */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  background-color: #000; /* Fond noir */
+  color: #fff; /* Texte blanc pour contraster avec le fond */
+}
+
+/* Navigation des favoris */
+.favorites-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.favorites-nav button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e9ec09;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.favorites-nav button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.favorites-nav button:focus {
+  outline: none;
+  background-color: #0056b3;
+}
+
+/* Conteneur des listes */
+.favorites-list,
+.viewed-list,
+.likes-list,
+.dislikes-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Éléments des listes */
+.favorite-item,
+.viewed-item,
+.like-item,
+.dislike-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Ombre claire */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.favorite-item:hover,
+.viewed-item:hover,
+.like-item:hover,
+.dislike-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre claire */
+}
+
+/* Image des films */
+.favorite-item img,
+.viewed-item img,
+.like-item img,
+.dislike-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Titre des films */
+.favorite-title,
+.viewed-title,
+.like-title,
+.dislike-title {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff; /* Texte blanc pour contraster avec le fond noir */
+}
+
+/* Styles spécifiques aux sections */
+.favorites-list {
+  background-color: #222; /* Fond noir léger pour les sections */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.viewed-list {
+  background-color: #222; /* Fond noir léger pour les sections */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.likes-list {
+  background-color: #222; /* Fond noir léger pour les sections */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dislikes-list {
+  background-color: #222; /* Fond noir léger pour les sections */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Titres des sections */
+h1,
+h2 {
+  text-align: center;
+  color: #fff; /* Texte blanc pour contraster avec le fond noir */
+}

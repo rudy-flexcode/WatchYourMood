@@ -13,27 +13,39 @@ function Search() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
+  const [viewed, setViewed] = useState<number[]>([]);
+  const [likes, setLikes] = useState<number[]>([]);
+  const [dislikes, setDislikes] = useState<number[]>([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Récupérer les films
     fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
     )
       .then((response) => response.json())
       .then((json) => setMovies(json.results));
-  });
 
-  // Gère la recherche
+    // Load initial states from localStorage
+    const savedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]",
+    );
+    const savedViewed = JSON.parse(localStorage.getItem("viewed") || "[]");
+    const savedLikes = JSON.parse(localStorage.getItem("likes") || "[]");
+    const savedDislikes = JSON.parse(localStorage.getItem("dislikes") || "[]");
+
+    setFavorites(savedFavorites);
+    setViewed(savedViewed);
+    setLikes(savedLikes);
+    setDislikes(savedDislikes);
+  }, []);
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  // Ajoute ou retire un film des favoris
   const toggleFavorite = (movie: Movie) => {
     const isFavorite = favorites.some((fav) => fav.id === movie.id);
-
     if (isFavorite) {
       const updatedFavorites = favorites.filter((fav) => fav.id !== movie.id);
       setFavorites(updatedFavorites);
@@ -45,7 +57,42 @@ function Search() {
     }
   };
 
-  // Filtre les films
+  const toggleViewed = (id: number) => {
+    const updatedViewed = viewed.includes(id)
+      ? viewed.filter((viewedId) => viewedId !== id)
+      : [...viewed, id];
+    setViewed(updatedViewed);
+    localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+  };
+
+  const toggleLike = (id: number) => {
+    const updatedLikes = likes.includes(id)
+      ? likes.filter((likeId) => likeId !== id)
+      : [...likes, id];
+    setLikes(updatedLikes);
+    localStorage.setItem("likes", JSON.stringify(updatedLikes));
+
+    if (dislikes.includes(id)) {
+      const updatedDislikes = dislikes.filter((dislikeId) => dislikeId !== id);
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    }
+  };
+
+  const toggleDislike = (id: number) => {
+    const updatedDislikes = dislikes.includes(id)
+      ? dislikes.filter((dislikeId) => dislikeId !== id)
+      : [...dislikes, id];
+    setDislikes(updatedDislikes);
+    localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+
+    if (likes.includes(id)) {
+      const updatedLikes = likes.filter((likeId) => likeId !== id);
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    }
+  };
+
   const filteredDatas = movies.filter((data) =>
     data.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
@@ -73,16 +120,34 @@ function Search() {
                 type="button"
                 onClick={() => toggleFavorite(data)}
               >
-                {favorites.some((fav) => fav.id === data.id)
-                  ? "★ Retirer"
-                  : "☆ Ajouter"}
-
-                <button className="add-button" type="button">
-                  ✔︎
-                </button>
-                <button className="like-button" type="button">
-                  👍🏼
-                </button>
+                {favorites.some((fav) => fav.id === data.id) ? "★" : "☆"}
+              </button>
+              <button
+                className={`viewed-button ${
+                  viewed.includes(data.id) ? "active" : ""
+                }`}
+                type="button"
+                onClick={() => toggleViewed(data.id)}
+              >
+                ✔︎
+              </button>
+              <button
+                className={`like-button ${
+                  likes.includes(data.id) ? "active" : ""
+                }`}
+                type="button"
+                onClick={() => toggleLike(data.id)}
+              >
+                👍🏼
+              </button>
+              <button
+                className={`dislike-button ${
+                  dislikes.includes(data.id) ? "active" : ""
+                }`}
+                type="button"
+                onClick={() => toggleDislike(data.id)}
+              >
+                👎🏼
               </button>
             </div>
             <img

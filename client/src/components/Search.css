@@ -1,4 +1,4 @@
-/*SEARCH BAR*/
+/* Style pour la barre de recherche */
 .searchBar {
   display: flex;
   justify-content: center;
@@ -14,9 +14,11 @@
   opacity: 80%;
 }
 
-/*RESPONSIVE DESKTOP SEARCH BAR*/
-.searchBar input {
-  width: 30%;
-  padding: 1em;
-  margin: 1.5em;
+/* Style réactif pour la barre de recherche sur les écrans de bureau */
+@media (min-width: 768px) {
+  .searchBar input {
+    width: 30%;
+    padding: 1em;
+    margin: 1.5em;
+  }
 }

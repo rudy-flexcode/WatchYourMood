@@ -19,11 +19,14 @@ function Nav({ isInMyMood, isInWatchlist }: NavType) {
           Mon Mood
         </li>
       </Link>
+
       <li
         className={isInWatchlist ? "mon-mood" : ""}
         style={isInWatchlist ? { backgroundColor, color: textColor } : {}}
       >
-        Watchlist
+        <Link to="/watchlist" style={isInWatchlist ? { color: textColor } : {}}>
+          Watchlist
+        </Link>
       </li>
     </ul>
   );
