@@ -97,6 +97,50 @@ function MyMood() {
     }
   };
 
+  const toggleViewed = (movie: Movie) => {
+    const isViewed = viewed.some((view) => view.id === movie.id);
+
+    if (isViewed) {
+      const updatedViewed = viewed.filter((view) => view.id !== movie.id);
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+    } else {
+      const updatedViewed = [...viewed, movie];
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+    }
+  };
+
+  const toggleLike = (movie: Movie) => {
+    const isLike = likes.some((like) => like.id === movie.id);
+
+    if (isLike) {
+      const updatedLikes = likes.filter((like) => like.id !== movie.id);
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    } else {
+      const updatedLikes = [...likes, movie];
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    }
+  };
+
+  const toggleDislike = (movie: Movie) => {
+    const isDislike = dislikes.some((dislike) => dislike.id === movie.id);
+
+    if (isDislike) {
+      const updatedDislikes = dislikes.filter(
+        (dislike) => dislike.id !== movie.id,
+      );
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    } else {
+      const updatedDislikes = [...dislikes, movie];
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    }
+  };
+
   if (isLoading) {
     return <Loader />;
   }
@@ -111,6 +155,7 @@ function MyMood() {
         <div className="search_result_mood">
           {movies.map((movie) => (
             <div className="search_results" key={movie.id}>
+              {/* Boutons d'interactions */}
               <div className="button-container">
                 <button
                   className={`favorite-button ${
@@ -121,8 +166,41 @@ function MyMood() {
                 >
                   {favorites.some((fav) => fav.id === movie.id) ? "★" : "☆"}
                 </button>
+
+                <button
+                  className={`viewed-button ${
+                    viewed.some((view) => view.id === movie.id) ? "active" : ""
+                  }`}
+                  type="button"
+                  onClick={() => toggleViewed(movie)}
+                >
+                  ✔︎
+                </button>
+                <button
+                  className={`like-button ${
+                    likes.some((like) => like.id === movie.id) ? "active" : ""
+                  }`}
+                  type="button"
+                  onClick={() => toggleLike(movie)}
+                >
+                  👍🏼
+                </button>
+                <button
+                  className={`dislike-button ${
+                    dislikes.some((dislike) => dislike.id === movie.id)
+                      ? "active"
+                      : ""
+                  }`}
+                  type="button"
+                  onClick={() => toggleDislike(movie)}
+                >
+                  👎🏼
+                </button>
               </div>
-              <div className="search_results_mood">
+
+              {/* Cartes recto/verso */}
+              <div className="search_results_mood" key={movie.id}>
+                {/* Recto */}
                 {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
                 <div
                   onClick={() => handleClick(movie.id)}
@@ -133,6 +211,8 @@ function MyMood() {
                     alt={movie.title}
                   />
                 </div>
+
+                {/* Verso */}
                 {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
                 <div
                   onClick={() => handleClick(movie.id)}

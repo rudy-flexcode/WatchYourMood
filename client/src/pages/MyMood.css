@@ -52,6 +52,7 @@
 .button-container {
   display: flex;
   justify-content: right;
+
   gap: 2px; /* Ajout d'un espacement entre les boutons */
   margin-bottom: 10px; /* Espace entre les boutons et la carte */
 }
