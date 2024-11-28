@@ -45,11 +45,10 @@ function Search() {
     setViewed(savedViewed);
     setLikes(savedLikes);
     setDislikes(savedDislikes);
-  }, []);
-
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    }, []);
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
-  };
+    };
 
   const toggleFavorite = (movie: Movie) => {
     const isFavorite = favorites.some((fav) => fav.id === movie.id);
@@ -135,8 +134,7 @@ function Search() {
                 type="button"
                 onClick={() => toggleFavorite(movie)}
               >
-
-                {favorites.some((fav) => fav.id === movie.id) ? "★" : "☆"}
+              {favorites.some((fav) => fav.id === movie.id) ? "★" : "☆"}
               </button>
               <button
                 className={`viewed-button ${
@@ -168,8 +166,8 @@ function Search() {
                 👎🏼
               </button>
             </div>
-           </div>
-          </div>
+            </div>
+            </div>
             {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
             <div
               onClick={() => handleClick(data.id)}
@@ -196,5 +194,4 @@ function Search() {
      </>
   );
 }
-
 export default Search;
