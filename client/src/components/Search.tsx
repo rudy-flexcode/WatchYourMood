@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Search.css";
 import "./Movies.css";
 
@@ -7,6 +6,9 @@ type Movie = {
   id: number;
   title: string;
   poster_path: string;
+  overview: string;
+  vote_average: number;
+  release_date: string;
 };
 
 function Search() {
@@ -16,24 +18,29 @@ function Search() {
   const [viewed, setViewed] = useState<Movie[]>([]);
   const [likes, setLikes] = useState<Movie[]>([]);
   const [dislikes, setDislikes] = useState<Movie[]>([]);
-
   const navigate = useNavigate();
-
-  useEffect(() => {
+  const [clicked, setClicked] = useState<{ [key: number]: boolean }>({});
+ useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
+      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&language=fr",
     )
       .then((response) => response.json())
       .then((json) => setMovies(json.results));
+    }, []);
 
-    // Load initial states from localStorage
+  // Gère le recto verso au clic, en fonction de l'ID du film
+  const handleClick = (id: number) => {
+    setClicked((clicked) => ({
+      [id]: !clicked[id], // Inverse l'état de visibilité pour l'ID du film cliqué
+    }));
+  };
+ // Load initial states from localStorage
     const savedFavorites = JSON.parse(
       localStorage.getItem("favorites") || "[]",
     );
     const savedViewed = JSON.parse(localStorage.getItem("viewed") || "[]");
     const savedLikes = JSON.parse(localStorage.getItem("likes") || "[]");
     const savedDislikes = JSON.parse(localStorage.getItem("dislikes") || "[]");
-
     setFavorites(savedFavorites);
     setViewed(savedViewed);
     setLikes(savedLikes);
@@ -128,6 +135,7 @@ function Search() {
                 type="button"
                 onClick={() => toggleFavorite(movie)}
               >
+
                 {favorites.some((fav) => fav.id === movie.id) ? "★" : "☆"}
               </button>
               <button
@@ -160,23 +168,32 @@ function Search() {
                 👎🏼
               </button>
             </div>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <h2>{movie.title}</h2>
+           </div>
+          </div>
+            {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+            <div
+              onClick={() => handleClick(data.id)}
+              className={`recto ${clicked[data.id] ? "hidden" : ""}`}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                alt={data.title}
+              />
+            </div>
+            {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+            <div
+              onClick={() => handleClick(data.id)}
+              className={`verso ${!clicked[data.id] ? "hidden" : ""}`}
+            >
+              <p>{data.title}</p>
+              <p>Date de sortie : {data.release_date}</p>
+              <p>Synopsis : {data.overview}</p>
+              <p>Note moyenne : {data.vote_average}/10</p>
+            </div>
           </div>
         ))}
       </div>
-
-      <button
-        type="button"
-        className="view-favorites-button"
-        onClick={() => navigate("/favorites")}
-      >
-        Voir mes favoris
-      </button>
-    </>
+     </>
   );
 }
 

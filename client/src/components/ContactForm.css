@@ -1,18 +1,18 @@
 form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: 500px;
   margin: 30px auto;
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 form label {
   display: block;
-  font-size: 1rem;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -22,34 +22,32 @@ form textarea {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 10px;
   box-sizing: border-box;
 }
 
 form button {
-  background-color: #4caf50;
-  color: white;
-  font-size: 1rem;
-  padding: 12px 20px;
+  background: #4caf50;
+  color: #ffffffdf;
+  padding: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   width: 100%;
-  box-sizing: border-box;
+  transition: 0.3s;
 }
 
 form button:hover {
-  background-color: #45a049;
-}
-
-form div {
-  margin-bottom: 15px;
+  background: #45a049;
 }
 
 h1 {
   font-family: var(--main-font);
   color: #ccc;
+
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   padding: 1em;
+  text-align: center;
 }
