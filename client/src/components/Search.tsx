@@ -118,7 +118,7 @@ function Search() {
       <button
         type="button"
         className="view-favorites-button"
-        onClick={() => navigate("/watchlist")}
+        onClick={() => navigator("/watchlist")}
       >
         Voir mes favoris
       </button>
