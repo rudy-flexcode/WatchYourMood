@@ -53,7 +53,6 @@ const ContactForm = () => {
             onChange={(e) => setObjet(e.target.value)}
           />
         </div>
-
         <div>
           <label htmlFor="message">Message:</label>
           <textarea
