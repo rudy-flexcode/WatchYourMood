@@ -34,7 +34,6 @@ const movies = useLoaderData() as {
     release_date: string;
   }[];
 
-
   const [isLoading, setIsLoading] = useState(true);
   const [favorites, setFavorites] = useState<Movie[]>([]);
   const [viewed, setViewed] = useState<Movie[]>([]);
@@ -217,7 +216,8 @@ const movies = useLoaderData() as {
                 <p>Note moyenne : {movie.vote_average}/10</p>
               </div>
              </div>
-       </div>
+           </div>
+          </div>
       </main>
       <Footer/>
       <img
