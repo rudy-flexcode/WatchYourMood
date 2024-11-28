@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Loader from "../components/Loader";
-import "./Contact.css";
 import Logo from "../components/Logo";
 
 const Contact: React.FC = () => {

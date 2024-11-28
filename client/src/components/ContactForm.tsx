@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./ContactForm.css";
 import Footer from "./Footer";
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
