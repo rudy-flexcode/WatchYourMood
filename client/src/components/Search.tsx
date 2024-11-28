@@ -26,7 +26,6 @@ function Search() {
     )
       .then((response) => response.json())
       .then((json) => setMovies(json.results));
-    }, []);
 
   // Gère le recto verso au clic, en fonction de l'ID du film
   const handleClick = (id: number) => {
