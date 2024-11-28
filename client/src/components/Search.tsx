@@ -166,7 +166,6 @@ function Search() {
               </button>
             </div>
             </div>
-            </div>
             {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
             <div
               onClick={() => handleClick(data.id)}
