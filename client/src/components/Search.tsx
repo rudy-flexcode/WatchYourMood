@@ -81,9 +81,7 @@ function Search() {
                 type="button"
                 onClick={() => toggleFavorite(data)}
               >
-                {favorites.some((fav) => fav.id === data.id)
-                  ? "★ Retirer"
-                  : "☆ Ajouter"}
+                {favorites.some((fav) => fav.id === data.id) ? "★ " : "☆ "}
 
                 <button className="add-button" type="button">
                   ✔︎

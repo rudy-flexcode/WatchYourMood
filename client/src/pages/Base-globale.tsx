@@ -7,20 +7,18 @@ import Nav from "../components/Navbar";
 import Search from "../components/Search";
 
 function Base() {
-  const [isLoading, setIsLoading] = useState(true); // État de chargement
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simule un délai de chargement (2 secondes par exemple)
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
-    // Nettoyage du timer
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
-    return <Loader />; // Affiche le Loader tant que isLoading est vrai
+    return <Loader />;
   }
 
   return (
