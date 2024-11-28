@@ -48,8 +48,6 @@ h1 {
   text-align: center;
   margin-bottom: 40px;
   font-size: clamp(1.5rem, 5vw, 2rem);
-
   padding: 1em;
   text-align: center;
-
 }
