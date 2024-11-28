@@ -152,7 +152,7 @@ function MyMood() {
         <Nav isInMyMood={true} />
       </header>
       <main>
-        <div className="search_result_mood">
+        <div className="search_result">
           {movies.map((movie) => (
             <div className="search_results" key={movie.id}>
               {/* Boutons d'interactions */}
@@ -199,30 +199,28 @@ function MyMood() {
               </div>
 
               {/* Cartes recto/verso */}
-              <div className="search_results_mood" key={movie.id}>
-                {/* Recto */}
-                {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-                <div
-                  onClick={() => handleClick(movie.id)}
-                  className={`recto ${clicked[movie.id] ? "hidden" : ""}`}
-                >
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                </div>
+              {/* Recto */}
+              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+              <div
+                onClick={() => handleClick(movie.id)}
+                className={`recto ${clicked[movie.id] ? "hidden" : ""}`}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
 
-                {/* Verso */}
-                {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-                <div
-                  onClick={() => handleClick(movie.id)}
-                  className={`verso ${!clicked[movie.id] ? "hidden" : ""}`}
-                >
-                  <p>{movie.title}</p>
-                  <p>Date de sortie : {movie.release_date}</p>
-                  <p>Synopsis : {movie.overview}</p>
-                  <p>Note moyenne : {movie.vote_average}/10</p>
-                </div>
+              {/* Verso */}
+              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+              <div
+                onClick={() => handleClick(movie.id)}
+                className={`verso ${!clicked[movie.id] ? "hidden" : ""}`}
+              >
+                <p>{movie.title}</p>
+                <p>Date de sortie : {movie.release_date}</p>
+                <p>Synopsis : {movie.overview}</p>
+                <p>Note moyenne : {movie.vote_average}/10</p>
               </div>
             </div>
           ))}
