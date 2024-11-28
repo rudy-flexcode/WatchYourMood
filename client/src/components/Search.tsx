@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Search.css";
 import "./Movies.css";
 
@@ -7,23 +6,32 @@ type Movie = {
   id: number;
   title: string;
   poster_path: string;
+  overview: string;
+  vote_average: number;
+  release_date: string;
 };
 
 function Search() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
-
-  const navigate = useNavigate();
+  const [clicked, setClicked] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
     // Récupérer les films
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9",
+      "https://api.themoviedb.org/3/discover/movie?api_key=01e787d764d61219a648b30bc425cdc9&language=fr",
     )
       .then((response) => response.json())
       .then((json) => setMovies(json.results));
-  });
+  }, []);
+
+  // Gère le recto verso au clic, en fonction de l'ID du film
+  const handleClick = (id: number) => {
+    setClicked((clicked) => ({
+      [id]: !clicked[id], // Inverse l'état de visibilité pour l'ID du film cliqué
+    }));
+  };
 
   // Gère la recherche
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,14 +91,30 @@ function Search() {
                 </button>
               </button>
             </div>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-              alt={data.title}
-            />
-            <p>{data.title}</p>
+            {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+            <div
+              onClick={() => handleClick(data.id)}
+              className={`recto ${clicked[data.id] ? "hidden" : ""}`}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                alt={data.title}
+              />
+            </div>
+            {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+            <div
+              onClick={() => handleClick(data.id)}
+              className={`verso ${!clicked[data.id] ? "hidden" : ""}`}
+            >
+              <p>{data.title}</p>
+              <p>Date de sortie : {data.release_date}</p>
+              <p>Synopsis : {data.overview}</p>
+              <p>Note moyenne : {data.vote_average}/10</p>
+            </div>
           </div>
         ))}
       </div>
+
       <button
         type="button"
         className="view-favorites-button"

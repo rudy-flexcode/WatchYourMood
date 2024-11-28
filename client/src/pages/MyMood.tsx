@@ -5,6 +5,7 @@ import colereImage from "../assets/images/colere-entier.png";
 import joieImage from "../assets/images/joie-entier.png";
 import peurImage from "../assets/images/peur-entier.png";
 import tristesseImage from "../assets/images/triste-entier.png";
+
 import Footer from "../components/Footer";
 import Loader from "../components/Loader"; // Import du Loader
 import Logo from "../components/Logo";
@@ -15,6 +16,7 @@ import "./MyMood.css";
 function MyMood() {
   const { emotionID } = useParams();
   const { getColors } = useStyleContext();
+  const [clicked, setClicked] = useState<{ [key: number]: boolean }>({});
 
   getColors(emotionID ?? null);
 
@@ -22,6 +24,9 @@ function MyMood() {
     id: number;
     title: string;
     poster_path: string;
+    overview: string;
+    vote_average: number;
+    release_date: string;
   }[];
 
   const [isLoading, setIsLoading] = useState(true); // État de chargement
@@ -35,6 +40,13 @@ function MyMood() {
     // Nettoyage du timer si le composant est démonté
     return () => clearTimeout(timer);
   }, []);
+
+  // Gère le recto verso au clic, en fonction de l'ID du film
+  const handleClick = (id: number) => {
+    setClicked((clicked) => ({
+      [id]: !clicked[id], // Inverse l'état de visibilité pour l'ID du film cliqué
+    }));
+  };
 
   // Mapping entre EmotionID dans l'URL et l'image à afficher
   const emotionImage: Record<string, string> = {
@@ -62,14 +74,29 @@ function MyMood() {
         <Nav isInMyMood={true} />
       </header>
       <main>
-        <div className="search_result">
+        <div className="search_result_mood">
           {movies.map((movie) => (
-            <div className="search_results" key={movie.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-              />
-              <h2>{movie.title}</h2>
+            <div className="search_results_mood" key={movie.id}>
+              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+              <div
+                onClick={() => handleClick(movie.id)}
+                className={`recto ${clicked[movie.id] ? "hidden" : ""}`}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
+              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+              <div
+                onClick={() => handleClick(movie.id)}
+                className={`verso ${!clicked[movie.id] ? "hidden" : ""}`}
+              >
+                <p>{movie.title}</p>
+                <p>Date de sortie : {movie.release_date}</p>
+                <p>Synopsis : {movie.overview}</p>
+                <p>Note moyenne : {movie.vote_average}/10</p>
+              </div>
             </div>
           ))}
         </div>
