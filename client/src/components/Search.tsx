@@ -188,9 +188,6 @@ function Search() {
               <p>Synopsis : {data.overview}</p>
               <p>Note moyenne : {data.vote_average}/10</p>
             </div>
-          </div>
-        ))}
-      </div>
      </>
   );
 }
