@@ -154,8 +154,7 @@ const movies = useLoaderData() as {
       <main>
         <div className="search_result_mood">
           {movies.map((movie) => (
-
-            <div className="search_results" key={movie.id}>
+           <div className="search_results" key={movie.id}>
               <div className="button-container">
                 <button
                   className={`favorite-button ${
@@ -217,12 +216,10 @@ const movies = useLoaderData() as {
                 <p>Synopsis : {movie.overview}</p>
                 <p>Note moyenne : {movie.vote_average}/10</p>
               </div>
-
-           </div>
-          ))}
-        </div>
+             </div>
+       </div>
       </main>
-      <Footer />
+      <Footer/>
       <img
         className="personnage-image"
         src={currentImage}
@@ -231,5 +228,4 @@ const movies = useLoaderData() as {
     </>
   );
 }
-
 export default MyMood;
