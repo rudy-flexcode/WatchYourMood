@@ -114,14 +114,6 @@ function Search() {
           </div>
         ))}
       </div>
-
-      <button
-        type="button"
-        className="view-favorites-button"
-        onClick={() => navigator("/watchlist")}
-      >
-        Voir mes favoris
-      </button>
     </>
   );
 }
