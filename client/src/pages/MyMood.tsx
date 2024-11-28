@@ -82,7 +82,6 @@ function MyMood() {
 
   const toggleViewed = (movie: Movie) => {
     const isViewed = viewed.some((view) => view.id === movie.id);
-    console.log({ isViewed });
 
     if (isViewed) {
       const updatedViewed = viewed.filter((view) => view.id !== movie.id);
@@ -95,31 +94,33 @@ function MyMood() {
     }
   };
 
-  const toggleLike = (id: number) => {
-    const updatedLikes = likes.includes(id)
-      ? likes.filter((likeId) => likeId !== id)
-      : [...likes, id];
-    setLikes(updatedLikes);
-    localStorage.setItem("likes", JSON.stringify(updatedLikes));
+  const toggleLike = (movie: Movie) => {
+    const isLike = likes.some((like) => like.id === movie.id);
 
-    if (dislikes.includes(id)) {
-      const updatedDislikes = dislikes.filter((dislikeId) => dislikeId !== id);
-      setDislikes(updatedDislikes);
-      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    if (isLike) {
+      const updatedLikes = likes.filter((like) => like.id !== movie.id);
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    } else {
+      const updatedLikes = [...likes, movie];
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
     }
   };
 
-  const toggleDislike = (id: number) => {
-    const updatedDislikes = dislikes.includes(id)
-      ? dislikes.filter((dislikeId) => dislikeId !== id)
-      : [...dislikes, id];
-    setDislikes(updatedDislikes);
-    localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+  const toggleDislike = (movie: Movie) => {
+    const isDislike = dislikes.some((dislike) => dislike.id === movie.id);
 
-    if (likes.includes(id)) {
-      const updatedLikes = likes.filter((likeId) => likeId !== id);
-      setLikes(updatedLikes);
-      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    if (isDislike) {
+      const updatedDislikes = dislikes.filter(
+        (dislike) => dislike.id !== movie.id,
+      );
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    } else {
+      const updatedDislikes = [...dislikes, movie];
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
     }
   };
 
@@ -158,19 +159,21 @@ function MyMood() {
                 </button>
                 <button
                   className={`like-button ${
-                    likes.includes(movie.id) ? "active" : ""
+                    likes.some((like) => like.id === movie.id) ? "active" : ""
                   }`}
                   type="button"
-                  onClick={() => toggleLike(movie.id)}
+                  onClick={() => toggleLike(movie)}
                 >
                   👍🏼
                 </button>
                 <button
                   className={`dislike-button ${
-                    dislikes.includes(movie.id) ? "active" : ""
+                    dislikes.some((dislike) => dislike.id === movie.id)
+                      ? "active"
+                      : ""
                   }`}
                   type="button"
-                  onClick={() => toggleDislike(movie.id)}
+                  onClick={() => toggleDislike(movie)}
                 >
                   👎🏼
                 </button>

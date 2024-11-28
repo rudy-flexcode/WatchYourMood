@@ -13,9 +13,9 @@ function Search() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>([]);
-  const [viewed, setViewed] = useState<number[]>([]);
-  const [likes, setLikes] = useState<number[]>([]);
-  const [dislikes, setDislikes] = useState<number[]>([]);
+  const [viewed, setViewed] = useState<Movie[]>([]);
+  const [likes, setLikes] = useState<Movie[]>([]);
+  const [dislikes, setDislikes] = useState<Movie[]>([]);
 
   const navigate = useNavigate();
 
@@ -57,44 +57,52 @@ function Search() {
     }
   };
 
-  const toggleViewed = (id: number) => {
-    const updatedViewed = viewed.includes(id)
-      ? viewed.filter((viewedId) => viewedId !== id)
-      : [...viewed, id];
-    setViewed(updatedViewed);
-    localStorage.setItem("viewed", JSON.stringify(updatedViewed));
-  };
+  const toggleViewed = (movie: Movie) => {
+    const isViewed = viewed.some((view) => view.id === movie.id);
 
-  const toggleLike = (id: number) => {
-    const updatedLikes = likes.includes(id)
-      ? likes.filter((likeId) => likeId !== id)
-      : [...likes, id];
-    setLikes(updatedLikes);
-    localStorage.setItem("likes", JSON.stringify(updatedLikes));
-
-    if (dislikes.includes(id)) {
-      const updatedDislikes = dislikes.filter((dislikeId) => dislikeId !== id);
-      setDislikes(updatedDislikes);
-      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    if (isViewed) {
+      const updatedViewed = viewed.filter((view) => view.id !== movie.id);
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
+    } else {
+      const updatedViewed = [...viewed, movie];
+      setViewed(updatedViewed);
+      localStorage.setItem("viewed", JSON.stringify(updatedViewed));
     }
   };
 
-  const toggleDislike = (id: number) => {
-    const updatedDislikes = dislikes.includes(id)
-      ? dislikes.filter((dislikeId) => dislikeId !== id)
-      : [...dislikes, id];
-    setDislikes(updatedDislikes);
-    localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+  const toggleLike = (movie: Movie) => {
+    const isLike = likes.some((like) => like.id === movie.id);
 
-    if (likes.includes(id)) {
-      const updatedLikes = likes.filter((likeId) => likeId !== id);
+    if (isLike) {
+      const updatedLikes = likes.filter((like) => like.id !== movie.id);
+      setLikes(updatedLikes);
+      localStorage.setItem("likes", JSON.stringify(updatedLikes));
+    } else {
+      const updatedLikes = [...likes, movie];
       setLikes(updatedLikes);
       localStorage.setItem("likes", JSON.stringify(updatedLikes));
     }
   };
 
-  const filteredDatas = movies.filter((data) =>
-    data.title.toLowerCase().includes(searchTerm.toLowerCase()),
+  const toggleDislike = (movie: Movie) => {
+    const isDislike = dislikes.some((dislike) => dislike.id === movie.id);
+
+    if (isDislike) {
+      const updatedDislikes = dislikes.filter(
+        (dislike) => dislike.id !== movie.id,
+      );
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    } else {
+      const updatedDislikes = [...dislikes, movie];
+      setDislikes(updatedDislikes);
+      localStorage.setItem("dislikes", JSON.stringify(updatedDislikes));
+    }
+  };
+
+  const filteredMovie = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -110,54 +118,57 @@ function Search() {
         />
       </div>
       <div className="search_result">
-        {filteredDatas.map((data) => (
-          <div className="search_results" key={data.id}>
+        {filteredMovie.map((movie) => (
+          <div className="search_results" key={movie.id}>
             <div className="button-container">
               <button
                 className={`favorite-button ${
-                  favorites.some((fav) => fav.id === data.id) ? "active" : ""
+                  favorites.some((fav) => fav.id === movie.id) ? "active" : ""
                 }`}
                 type="button"
-                onClick={() => toggleFavorite(data)}
+                onClick={() => toggleFavorite(movie)}
               >
-                {favorites.some((fav) => fav.id === data.id) ? "★" : "☆"}
+                {favorites.some((fav) => fav.id === movie.id) ? "★" : "☆"}
               </button>
               <button
                 className={`viewed-button ${
-                  viewed.includes(data.id) ? "active" : ""
+                  viewed.some((view) => view.id === movie.id) ? "active" : ""
                 }`}
                 type="button"
-                onClick={() => toggleViewed(data.id)}
+                onClick={() => toggleViewed(movie)}
               >
                 ✔︎
               </button>
               <button
                 className={`like-button ${
-                  likes.includes(data.id) ? "active" : ""
+                  likes.some((like) => like.id === movie.id) ? "active" : ""
                 }`}
                 type="button"
-                onClick={() => toggleLike(data.id)}
+                onClick={() => toggleLike(movie)}
               >
                 👍🏼
               </button>
               <button
                 className={`dislike-button ${
-                  dislikes.includes(data.id) ? "active" : ""
+                  dislikes.some((dislike) => dislike.id === movie.id)
+                    ? "active"
+                    : ""
                 }`}
                 type="button"
-                onClick={() => toggleDislike(data.id)}
+                onClick={() => toggleDislike(movie)}
               >
                 👎🏼
               </button>
             </div>
             <img
-              src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-              alt={data.title}
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
             />
-            <p>{data.title}</p>
+            <h2>{movie.title}</h2>
           </div>
         ))}
       </div>
+
       <button
         type="button"
         className="view-favorites-button"
