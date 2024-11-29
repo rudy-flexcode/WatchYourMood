@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Irish Grover";
-  src: url(../public/fonts/IrishGrover-Regular.ttf);
+  src: url(./fonts/IrishGrover-Regular.ttf);
 }
 @font-face {
   font-family: "Inter";
-  src: url(../public/fonts/Inter/Inter-VariableFont_opsz\wght.ttf);
+  src: url(./fonts/Inter/Inter-VariableFont_opsz\wght.ttf);
 }
 
 :root {
